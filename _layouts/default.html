@@ -24,8 +24,8 @@
         text-align: center;
         background-color: $header-bg-color;
         background-image: url(../index_image.jpg);
-        background-size: 90rem 32rem;
-        padding : 35px 10px;
+        background-size: 1000px 500px;
+        padding: 10px 5px;
 
         @include large {
           padding: 5rem 6rem;
@@ -54,9 +54,11 @@
       <h3 class="about"><a href="/about.html", style='color:white'> About </a></h3>
       <h1 class="project-name">{{ site.title | default: site.title | default: site.github.repository_name }}</h1>
       <h2 class="project-tagline">{{ site.description | default: site.description | default: site.github.project_tagline }}</h2>
+      <h3>
       {% for category in site.categories %}
-        {{category | first}}
+         &nbsp; &nbsp; &nbsp; {{category | first}}  &nbsp; &nbsp; &nbsp; 
       {% endfor %}
+      </h3>
       {% if site.github.is_project_page %}
         <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
       {% endif %}
