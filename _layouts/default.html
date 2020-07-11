@@ -18,9 +18,29 @@
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <style>
+      .page-header {
+        color: $header-heading-color;
+        text-align: center;
+        background-color: $header-bg-color;
+        background-image: url(../index_image.jpg);
+        background-size: 1300px 500px;
+      
+        @include large {
+          padding: 5rem 6rem;
+        }
+      
+        @include medium {
+          padding: 3rem 4rem;
+        }
+      
+        @include small {
+          padding: 2rem 1rem;
+        }
+      }
+    </style>
   </head>
   <body>
-    <a id="skip-to-content" href="#content">Skip to the content.</a>
 
     <header class="page-header" role="banner">
       <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
