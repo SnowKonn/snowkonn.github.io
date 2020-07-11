@@ -55,8 +55,8 @@
       <h1 class="project-name">{{ site.title | default: site.title | default: site.github.repository_name }}</h1>
       <h2 class="project-tagline">{{ site.description | default: site.description | default: site.github.project_tagline }}</h2>
       <h3>
-      {% for category in site.categories %}
-         &nbsp; &nbsp; &nbsp; {{category | first}}  &nbsp; &nbsp; &nbsp; 
+      {% for category in site.data.index.docs %}
+         &nbsp; &nbsp; &nbsp; <a href="{{category.url}}" style="color:white">{{category.title}}</a>  &nbsp; &nbsp; &nbsp; 
       {% endfor %}
       </h3>
       {% if site.github.is_project_page %}

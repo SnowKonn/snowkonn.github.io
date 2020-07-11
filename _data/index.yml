@@ -1,0 +1,11 @@
+docs_list_title: Categories
+docs:
+
+- title: Computer
+  url: /Computer/index.html
+
+- title: Economics
+  url: /Economics/index.html
+
+- title: Projects
+  url: /Projects/index.html
