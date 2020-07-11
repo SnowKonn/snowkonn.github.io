@@ -48,22 +48,22 @@
       }
 
       .inpad {
-        padding-left: 60px;
-        padding-right: 60px;
+        padding-left: 30px;
+        padding-right: 30px;
       }
 
-      @media(min-width: 500px)
-
-      .inpad {
-        padding-left: 3px;
-        padding-right: 3px;
+      @media(min-width: 1500px){
+        .inpad {
+          padding-left: 100px;
+          padding-right: 100px;
+        }
       }
 
-      @media(max-width: 1500px)
-
-      .inpad {
-        padding-left: 100px;
-        padding-right: 100px;
+      @media(max-width: 400px){
+        .inpad {
+          padding-left: 3px;
+          padding-right: 3px;
+        }
       }
 
     </style>
@@ -75,10 +75,11 @@
       <h1 class="project-name">{{ site.title | default: site.title | default: site.github.repository_name }}</h1>
       <h2 class="project-tagline">{{ site.description | default: site.description | default: site.github.project_tagline }}</h2>
       <h3>
-      {% for category in site.data.index.docs %}
-         <span class="inpad"><a href="{{category.url}}" style="color:white">{{category.title}}</a></span>
-      {% endfor %}
+        {% for category in site.data.index.docs %}
+          <span class="inpad"><a href="{{category.url}}" style="color:white">{{category.title}}</a></span>
+        {% endfor %}
       </h3>
+
       {% if site.github.is_project_page %}
         <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
       {% endif %}
