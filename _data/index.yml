@@ -3,9 +3,16 @@ docs:
 
 - title: Computer
   url: /Computer/index.html
+  subindex:
+    - subtitle: Algorithm
 
 - title: Economics
   url: /Economics/index.html
+  subindex:
+    - subtitle: Econometrics
 
 - title: Projects
   url: /Projects/index.html
+  subindex:
+    - subtitle: NewsScrap
+
