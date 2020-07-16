@@ -42,14 +42,19 @@
   @media(min-width: 700px){
     #index_grid{
       display: grid;
-      grid-template-columns: 2fr 7fr;
+      grid-template-columns: 2fr 9fr;
       
+    }
+
+    body {
+      background-color: rgba(250, 191, 124, 0.041);
     }
 
     #index_list{
       
       padding: 1rem;
       padding-left: 3rem;
+      margin-bottom: 20px;
       border-right: 1px dotted grey;
     }
   }
@@ -68,7 +73,7 @@
   @media screen and (min-width: 64em){
   .main-content {
       max-width: 64rem;
-      padding: 4rem 4rem;
+      padding: 1.5rem 4rem;
       margin: 10px;
       font-size: 1.1rem;
   }

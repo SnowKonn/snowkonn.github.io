@@ -5,6 +5,7 @@ docs:
   url: /Computer/index.html
   subindex:
     - subtitle: Algorithm
+    - subtitle: PHP
 
 - title: Economics
   url: /Economics/index.html

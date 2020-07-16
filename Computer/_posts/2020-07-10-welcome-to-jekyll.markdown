@@ -1,6 +1,6 @@
 ---
 layout: post 
-title:  "안녕하세요"
+title:  "Test page"
 date:   2020-07-10 18:24:18 +0900
 categories: Computer
 ---
