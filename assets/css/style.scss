@@ -39,17 +39,30 @@
     }
   }
 
-  #index_grid{
-    display: grid;
-    grid-template-columns: 2fr 7fr;
-    
+  @media(min-width: 700px){
+    #index_grid{
+      display: grid;
+      grid-template-columns: 2fr 7fr;
+      
+    }
+
+    #index_list{
+      
+      padding: 1rem;
+      padding-left: 3rem;
+      border-right: 1px dotted grey;
+    }
   }
 
-  #index_list{
-    
-    padding: 1rem;
-    padding-left: 3rem;
-    border-right: 1px dotted grey;
+  @media(max-width: 700px){
+    #index_grid{
+      padding: 1rem;
+      
+    }
+
+    #index_list{
+      display: none;
+    }
   }
 
   @media screen and (min-width: 64em){
