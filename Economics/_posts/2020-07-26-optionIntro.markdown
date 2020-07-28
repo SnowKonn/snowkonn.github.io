@@ -2,7 +2,7 @@
 layout: post 
 title:  "Option introduction"
 date:   2020-07-27 02:58:18 +09:00
-categories: Economics
+categories: Economics Finance
 ---
 <div style="color:black;font-size:24px;">
   정의 
@@ -57,7 +57,7 @@ categories: Economics
  > &nbsp;&nbsp;&nbsp;&nbsp;\\( K:\\) 만기 시점 행사가<br>
 
  - 현재 시점으로 치환 했을 때는 다음의 식이 성립한다.<br>
-  > \\( c_0 + Ke^{-rT} = p_0 + S_T \\)<br>
+  > \\( c_0 + Ke^{-rT} = p_0 + S_0 \\)<br>
  > where <br>
  > &nbsp;&nbsp;&nbsp;&nbsp;\\( c_0: \\) 현재 시점 콜 옵션 가격<br>
  > &nbsp;&nbsp;&nbsp;&nbsp;\\( p_0: \\) 현재 시점 풋 옵션 가격<br>

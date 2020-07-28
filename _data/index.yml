@@ -11,6 +11,7 @@ docs:
   url: /Economics/index.html
   subindex:
     - subtitle: Econometrics
+    - subtitle: Finance
 
 - title: Projects
   url: /Projects/index.html
