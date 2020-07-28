@@ -63,3 +63,14 @@ categories: Economics Finance
  > &nbsp;&nbsp;&nbsp;&nbsp;\\( p_0: \\) 현재 시점 풋 옵션 가격<br>
  > &nbsp;&nbsp;&nbsp;&nbsp;\\( S_0: \\) 현재 시점 주식 가격<br>
  > &nbsp;&nbsp;&nbsp;&nbsp;\\( K:\\) 만기 시점 행사가<br>
+
+<br>
+<br>
+<span style="color:black;font-size:24px;">
+  옵션 가격에 영향을 끼치는 변수 정리
+</span>
+ 1. 기초자산 가격 :\\( S_t \\)
+ 1. 기초자산의 변동성 : \\( \sigma_S \\)
+ 1. 잔존 만기일 : \\( T-t \\)
+ 1. 무위험 이자율 : \\( r_f \\)
+ 1. 행사가격 : \\( K \\)
