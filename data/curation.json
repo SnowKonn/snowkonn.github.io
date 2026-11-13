@@ -1,0 +1,406 @@
+{
+ "_exclude": {
+  "title": [
+   "^\\[다음주 시장은\\?\\]",
+   "Morning Brief",
+   "주간\\s*전략",
+   "Weekly",
+   "Daily",
+   "^\\[Set up\\]"
+  ],
+  "attach": [
+   "Strategy_Weekly",
+   "Weekly",
+   "Daily"
+  ]
+ },
+ "r-invest-40806": {
+  "title_en": "Foreign selling under review: re-entry scenarios by volatility condition",
+  "topics": [
+   "flows"
+  ]
+ },
+ "r-invest-40580": {
+  "title_en": "When earnings are hard to trust, quality stands out",
+  "topics": [
+   "factor",
+   "earnings"
+  ]
+ },
+ "r-invest-40440": {
+  "title_en": "The US discounted by rates, Korea discounted by the cycle",
+  "topics": [
+   "macro"
+  ]
+ },
+ "r-invest-40392": {
+  "title_en": "Who sold into all those semiconductor buybacks?",
+  "topics": [
+   "flows",
+   "returns"
+  ]
+ },
+ "r-invest-40311": {
+  "title_en": "Earnings against rate pressure, dividends for a wait-and-see market",
+  "topics": [
+   "factor"
+  ]
+ },
+ "r-invest-40042": {
+  "title_en": "Cheap even after allowing for higher rates",
+  "topics": [
+   "macro"
+  ]
+ },
+ "r-invest-39906": {
+  "title_en": "The market's colour is about to change",
+  "topics": [
+   "strategy"
+  ]
+ },
+ "r-invest-39718": {
+  "title_en": "Early signs of easing volatility amid the market plunge",
+  "topics": [
+   "strategy"
+  ]
+ },
+ "r-invest-39479": {
+  "title_en": "AI watch points for earnings season: investment in the US, the pace of profits in Korea",
+  "topics": [
+   "earnings"
+  ]
+ },
+ "r-invest-39352": {
+  "title_en": "Side Effects: AI growth is intact, and so are the by-products of sustaining it",
+  "topics": [
+   "factor"
+  ]
+ },
+ "r-invest-39304": {
+  "title_en": "Vibe Quant is coming: time-series foundation models",
+  "topics": [
+   "method"
+  ]
+ },
+ "r-invest-39148": {
+  "title_en": "Foreign selling continues: higher equity volatility and asset allocation",
+  "topics": [
+   "flows",
+   "macro"
+  ]
+ },
+ "r-invest-39118": {
+  "title_en": "An uneasy market, and the corporate value-up plans that stand out",
+  "topics": [
+   "returns"
+  ]
+ },
+ "r-invest-38955": {
+  "title_en": "Rising discount rates in a bull market: equity duration",
+  "topics": [
+   "macro",
+   "factor"
+  ]
+ },
+ "r-invest-38821": {
+  "title_en": "Why foreign ownership of KOSPI stays high despite net selling",
+  "topics": [
+   "flows"
+  ]
+ },
+ "r-invest-39499": {
+  "title_en": "The fundamentals of investor flows: structure and alpha",
+  "topics": [
+   "flows"
+  ]
+ },
+ "r-invest-38617": {
+  "title_en": "[April quant outlook] Macro unease: lean on earnings and policy-related factors",
+  "topics": [
+   "factor"
+  ]
+ },
+ "r-invest-38306": {
+  "title_en": "Earnings season preview: what to buy besides semiconductors?",
+  "topics": [
+   "earnings"
+  ]
+ },
+ "r-invest-38223": {
+  "title_en": "Dividend investing is not defensive investing",
+  "topics": [
+   "returns",
+   "factor"
+  ]
+ },
+ "r-invest-38162": {
+  "title_en": "A bipolar market: respond with earnings names and oversold stocks",
+  "topics": [
+   "strategy"
+  ]
+ },
+ "r-invest-37690": {
+  "title_en": "[Quant: Soon to Know] One month of FOMO, then back to earnings stocks",
+  "topics": [
+   "earnings",
+   "factor"
+  ]
+ },
+ "r-invest-37595": {
+  "title_en": "[IBKS Quant Agent Series #2] A factor-timing agent",
+  "topics": [
+   "method",
+   "factor"
+  ]
+ },
+ "r-invest-37436": {
+  "title_en": "[IBKS Quant idea note] A good start with a long echo: the first-three-trading-days effect",
+  "topics": [
+   "factor"
+  ]
+ },
+ "r-invest-37395": {
+  "title_en": "[Quant: Soon to Know] January picks with further to run: stocks that held up through earnings forecast cuts",
+  "topics": [
+   "factor"
+  ]
+ },
+ "r-invest-37299": {
+  "title_en": "[Quant: Soon to Know] Year-end ex-dividend: companies eligible for separate taxation of dividend income",
+  "topics": [
+   "returns"
+  ]
+ },
+ "r-invest-37206": {
+  "title_en": "[IBKS Quant Agent Series #1] An agent that reads the macro regime",
+  "topics": [
+   "method",
+   "macro"
+  ]
+ },
+ "r-invest-37132": {
+  "title_en": "[IBKS Quant idea note] Value stocks: the shareholder-return signal matters more than the numbers (feat. Sebang Global Battery)",
+  "topics": [
+   "returns",
+   "factor"
+  ]
+ },
+ "r-invest-37111": {
+  "title_en": "[Quant: Soon to Know] December picks with further to run: value and long-term momentum preferred",
+  "topics": [
+   "factor"
+  ]
+ },
+ "r-invest-37090": {
+  "title_en": "[IBKS Quant idea note] Indicators that will matter as much as Nvidia's earnings",
+  "topics": [
+   "macro"
+  ]
+ },
+ "r-invest-36922": {
+  "title_en": "[Quant: Soon to Know] Unprecedented upgrades to KOSPI earnings estimates: checking the earnings-momentum effect",
+  "topics": [
+   "earnings",
+   "factor"
+  ]
+ },
+ "r-invest-36821": {
+  "title_en": "[Quant: Soon to Know] November picks with further to run: momentum set to spread to growth stocks with improving earnings",
+  "topics": [
+   "factor"
+  ]
+ },
+ "r-invest-36592": {
+  "title_en": "[Quant: Soon to Know] October picks with further to run: earnings-led large-cap momentum continues",
+  "topics": [
+   "factor"
+  ]
+ },
+ "r-invest-36188": {
+  "title_en": "[Quant: Soon to Know] September seasonal weakness: be careful with stocks heavily bought by foreigners",
+  "topics": [
+   "flows"
+  ]
+ },
+ "r-invest-36120": {
+  "title_en": "[Quant: Soon to Know] Capital-market reform is still being written into law: a combined-factor strategy",
+  "topics": [
+   "factor",
+   "returns"
+  ]
+ },
+ "r-invest-35618": {
+  "title_en": "Focus on high dividend yields and companies with shareholder-return targets",
+  "topics": [
+   "returns"
+  ]
+ },
+ "r-invest-35411": {
+  "title_en": "Companies cancelling treasury shares: policy change expected, selectivity required",
+  "topics": [
+   "returns"
+  ]
+ },
+ "r-invest-34936": {
+  "title_en": "US–China talks surprise: checking flows by major sector",
+  "topics": [
+   "flows"
+  ]
+ },
+ "r-invest-34745": {
+  "title_en": "Sentiment recovers: recommended portfolios by scenario if fear returns",
+  "topics": [
+   "strategy"
+  ]
+ },
+ "r-invest-34627": {
+  "title_en": "[Quant: Soon to Know] Companies able to pay tax-exempt dividends in Q2",
+  "topics": [
+   "returns"
+  ]
+ },
+ "r-invest-34554": {
+  "title_en": "[Quant: Soon to Know] Why companies hold treasury shares: shareholder returns vs growth",
+  "topics": [
+   "returns"
+  ]
+ },
+ "r-invest-34493": {
+  "title_en": "[IBKS Market Comment] The resumption of short selling: impact and implications",
+  "topics": [
+   "flows"
+  ],
+  "role": "contributor"
+ },
+ "r-market-31551": {
+  "title_en": "[Market: Soon to Know] After the sell-off: narratives unwound and narratives born",
+  "topics": [
+   "strategy"
+  ]
+ },
+ "r-market-31351": {
+  "title_en": "[IBKS Issue Book] AGM season approaches, and so do activist campaigns",
+  "topics": [
+   "returns"
+  ]
+ },
+ "r-market-31300": {
+  "title_en": "[IBKS Issue Note] Reverse engineering: the blueprint AI pioneers are drawing",
+  "topics": [
+   "strategy"
+  ]
+ },
+ "r-market-31280": {
+  "title_en": "[Market: Soon to Know] Software as an AI follower, semiconductors between worry and hope",
+  "topics": [
+   "strategy"
+  ]
+ },
+ "r-market-31263": {
+  "title_en": "The DeepSeek ripple effect: Korea as a follower",
+  "topics": [
+   "strategy"
+  ]
+ },
+ "r-market-31215": {
+  "title_en": "[IBKS Issue Note] Which companies are activist funds looking at?",
+  "topics": [
+   "returns"
+  ]
+ },
+ "r-market-31188": {
+  "title_en": "[Market: Soon to Know] He’s Back: tariff and energy policy, focus on top-momentum companies",
+  "topics": [
+   "strategy",
+   "factor"
+  ]
+ },
+ "r-market-31110": {
+  "title_en": "[Market: Soon to Know] KOSPI's sensitivity to global equities at a low: near-term downside looks limited",
+  "topics": [
+   "strategy"
+  ]
+ },
+ "r-market-31062": {
+  "title_en": "Treasury-share rule reform: companies worth watching",
+  "topics": [
+   "returns"
+  ]
+ },
+ "r-invest-37762": {
+  "title_en": "[Quant: Soon to Know] February picks with further to run: secondary batteries and chemicals favoured",
+  "topics": [
+   "factor"
+  ]
+ },
+ "r-invest-36470": {
+  "title_en": "[IBKS Quant Report] Picks with further to run: candidates an AI model singles out",
+  "topics": [
+   "method",
+   "factor"
+  ]
+ },
+ "r-invest-34330": {
+  "title_en": "V.O.L: a quantitative frame for protecting the magic of compounding",
+  "topics": [
+   "factor"
+  ],
+  "code_url": "https://github.com/SnowKonn/IBKS_VOL_Report"
+ },
+ "r-invest-32302": {
+  "title_en": "Using LLM platforms to build natural-language models, with applied cases",
+  "topics": [
+   "method"
+  ],
+  "role": "contributor"
+ },
+ "r-invest-31453": {
+  "title_en": "[IBKS ESG Report] ESG: the gap between direction and expectations",
+  "topics": [
+   "strategy"
+  ],
+  "role": "contributor"
+ },
+ "r-invest-29293": {
+  "title_en": "New Factor: how to find the oversold stocks that can rebound",
+  "topics": [
+   "factor"
+  ],
+  "role": "contributor"
+ },
+ "r-invest-29197": {
+  "drop": true,
+  "why": "team annual outlook (RA credit)"
+ },
+ "r-invest-29898": {
+  "drop": true,
+  "why": "team ETF monthly (RA credit)"
+ },
+ "r-invest-30204": {
+  "drop": true,
+  "why": "team ETF monthly (RA credit)"
+ },
+ "r-invest-30540": {
+  "drop": true,
+  "why": "team ETF monthly (RA credit)"
+ },
+ "_extra": [
+  {
+   "id": "r-ibks-1984",
+   "date": "2025-01-09",
+   "house": "IBK투자증권",
+   "category": "market",
+   "title_ko": "[IBKS ISSUE NOTE] 자사주 소각 가능 기업 리스트",
+   "title_en": "[IBKS Issue Note] Companies in a position to cancel treasury shares",
+   "role": "author",
+   "pages": 3,
+   "topics": [
+    "returns"
+   ],
+   "summary_ko": "",
+   "naver_url": "https://www.ibks.com/investment/research/strategy_view.do?seq=1984&gubun=STRATEGY&popup=null",
+   "pdf_url": "",
+   "source": "ibks"
+  }
+ ]
+}
