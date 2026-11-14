@@ -15,7 +15,9 @@
   "naver_url": "https://stock.naver.com/research/invest/40806",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/15/20261112_invest_659414000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2026-11-11-daishin-40806.pdf",
+  "text_file": "reports/2026-11-11-daishin-40806.txt"
  },
  {
   "id": "r-invest-40580",
@@ -34,7 +36,9 @@
   "naver_url": "https://stock.naver.com/research/invest/40580",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/15/20261026_invest_873807000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2026-10-26-daishin-40580.pdf",
+  "text_file": "reports/2026-10-26-daishin-40580.txt"
  },
  {
   "id": "r-invest-40440",
@@ -52,7 +56,9 @@
   "naver_url": "https://stock.naver.com/research/invest/40440",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/15/20261013_invest_798816000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2026-10-13-daishin-40440.pdf",
+  "text_file": "reports/2026-10-13-daishin-40440.txt"
  },
  {
   "id": "r-invest-40392",
@@ -71,7 +77,9 @@
   "naver_url": "https://stock.naver.com/research/invest/40392",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/15/20261007_invest_733937000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2026-10-07-daishin-40392.pdf",
+  "text_file": "reports/2026-10-07-daishin-40392.txt"
  },
  {
   "id": "r-invest-40311",
@@ -89,7 +97,9 @@
   "naver_url": "https://stock.naver.com/research/invest/40311",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/15/20260928_invest_994252000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2026-09-28-daishin-40311.pdf",
+  "text_file": "reports/2026-09-28-daishin-40311.txt"
  },
  {
   "id": "r-invest-40042",
@@ -107,7 +117,9 @@
   "naver_url": "https://stock.naver.com/research/invest/40042",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/15/20260831_invest_157250000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2026-08-31-daishin-40042.pdf",
+  "text_file": "reports/2026-08-31-daishin-40042.txt"
  },
  {
   "id": "r-invest-39906",
@@ -125,7 +137,9 @@
   "naver_url": "https://stock.naver.com/research/invest/39906",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/15/20260814_invest_61188000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2026-08-14-daishin-39906.pdf",
+  "text_file": "reports/2026-08-14-daishin-39906.txt"
  },
  {
   "id": "r-invest-39718",
@@ -143,7 +157,9 @@
   "naver_url": "https://stock.naver.com/research/invest/39718",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/15/20260729_invest_64559000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2026-07-29-daishin-39718.pdf",
+  "text_file": "reports/2026-07-29-daishin-39718.txt"
  },
  {
   "id": "r-invest-39479",
@@ -161,7 +177,9 @@
   "naver_url": "https://stock.naver.com/research/invest/39479",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/17/20260708_invest_669609000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2026-07-08-daishin-39479.pdf",
+  "text_file": "reports/2026-07-08-daishin-39479.txt"
  },
  {
   "id": "r-invest-39352",
@@ -179,7 +197,9 @@
   "naver_url": "https://stock.naver.com/research/invest/39352",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/15/20260629_invest_676006000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2026-06-29-daishin-39352.pdf",
+  "text_file": "reports/2026-06-29-daishin-39352.txt"
  },
  {
   "id": "r-invest-39304",
@@ -197,7 +217,9 @@
   "naver_url": "https://stock.naver.com/research/invest/39304",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/15/20260624_invest_859342000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2026-06-24-daishin-39304.pdf",
+  "text_file": "reports/2026-06-24-daishin-39304.txt"
  },
  {
   "id": "r-invest-39148",
@@ -216,7 +238,9 @@
   "naver_url": "https://stock.naver.com/research/invest/39148",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/15/20260611_invest_899653000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2026-06-11-daishin-39148.pdf",
+  "text_file": "reports/2026-06-11-daishin-39148.txt"
  },
  {
   "id": "r-invest-39118",
@@ -234,7 +258,9 @@
   "naver_url": "https://stock.naver.com/research/invest/39118",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/15/20260609_invest_748414000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2026-06-09-daishin-39118.pdf",
+  "text_file": "reports/2026-06-09-daishin-39118.txt"
  },
  {
   "id": "r-invest-38955",
@@ -253,7 +279,9 @@
   "naver_url": "https://stock.naver.com/research/invest/38955",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/15/20260526_invest_575925000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2026-05-26-daishin-38955.pdf",
+  "text_file": "reports/2026-05-26-daishin-38955.txt"
  },
  {
   "id": "r-invest-38821",
@@ -271,7 +299,9 @@
   "naver_url": "https://stock.naver.com/research/invest/38821",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/15/20260513_invest_493911000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2026-05-13-daishin-38821.pdf",
+  "text_file": "reports/2026-05-13-daishin-38821.txt"
  },
  {
   "id": "r-invest-39499",
@@ -289,7 +319,9 @@
   "naver_url": "https://stock.naver.com/research/invest/39499",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/15/20260709_invest_184935000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2026-04-23-daishin-39499.pdf",
+  "text_file": "reports/2026-04-23-daishin-39499.txt"
  },
  {
   "id": "r-invest-38617",
@@ -307,7 +339,9 @@
   "naver_url": "https://stock.naver.com/research/invest/38617",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/15/20260422_invest_27952000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2026-04-22-daishin-38617.pdf",
+  "text_file": "reports/2026-04-22-daishin-38617.txt"
  },
  {
   "id": "r-invest-38306",
@@ -325,7 +359,9 @@
   "naver_url": "https://stock.naver.com/research/invest/38306",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/15/20260325_invest_350133000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2026-03-25-daishin-38306.pdf",
+  "text_file": "reports/2026-03-25-daishin-38306.txt"
  },
  {
   "id": "r-invest-38223",
@@ -344,7 +380,9 @@
   "naver_url": "https://stock.naver.com/research/invest/38223",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/15/20260318_invest_564346000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2026-03-18-daishin-38223.pdf",
+  "text_file": "reports/2026-03-18-daishin-38223.txt"
  },
  {
   "id": "r-invest-38162",
@@ -362,7 +400,9 @@
   "naver_url": "https://stock.naver.com/research/invest/38162",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/15/20260312_invest_77426000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2026-03-12-daishin-38162.pdf",
+  "text_file": "reports/2026-03-12-daishin-38162.txt"
  },
  {
   "id": "r-invest-37762",
@@ -380,7 +420,9 @@
   "naver_url": "https://stock.naver.com/research/invest/37762",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/40/20260203_invest_601070000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2026-02-03-ibk-37762.pdf",
+  "text_file": "reports/2026-02-03-ibk-37762.txt"
  },
  {
   "id": "r-invest-37690",
@@ -399,7 +441,9 @@
   "naver_url": "https://stock.naver.com/research/invest/37690",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/40/20260128_invest_483854000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2026-01-28-ibk-37690.pdf",
+  "text_file": "reports/2026-01-28-ibk-37690.txt"
  },
  {
   "id": "r-invest-37595",
@@ -418,7 +462,9 @@
   "naver_url": "https://stock.naver.com/research/invest/37595",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/40/20260121_invest_381266000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2026-01-21-ibk-37595.pdf",
+  "text_file": "reports/2026-01-21-ibk-37595.txt"
  },
  {
   "id": "r-invest-37436",
@@ -436,7 +482,9 @@
   "naver_url": "https://stock.naver.com/research/invest/37436",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/40/20260107_invest_373829000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2026-01-07-ibk-37436.pdf",
+  "text_file": "reports/2026-01-07-ibk-37436.txt"
  },
  {
   "id": "r-invest-37395",
@@ -454,7 +502,9 @@
   "naver_url": "https://stock.naver.com/research/invest/37395",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/40/20260105_invest_931683000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2026-01-05-ibk-37395.pdf",
+  "text_file": "reports/2026-01-05-ibk-37395.txt"
  },
  {
   "id": "r-invest-37299",
@@ -472,7 +522,9 @@
   "naver_url": "https://stock.naver.com/research/invest/37299",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/40/20251222_invest_879954000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2025-12-22-ibk-37299.pdf",
+  "text_file": "reports/2025-12-22-ibk-37299.txt"
  },
  {
   "id": "r-invest-37206",
@@ -491,7 +543,9 @@
   "naver_url": "https://stock.naver.com/research/invest/37206",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/40/20251211_invest_113238000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2025-12-11-ibk-37206.pdf",
+  "text_file": "reports/2025-12-11-ibk-37206.txt"
  },
  {
   "id": "r-invest-37132",
@@ -510,7 +564,9 @@
   "naver_url": "https://stock.naver.com/research/invest/37132",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/40/20251203_invest_474187000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2025-12-03-ibk-37132.pdf",
+  "text_file": "reports/2025-12-03-ibk-37132.txt"
  },
  {
   "id": "r-invest-37111",
@@ -528,7 +584,9 @@
   "naver_url": "https://stock.naver.com/research/invest/37111",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/40/20251202_invest_949599000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2025-12-02-ibk-37111.pdf",
+  "text_file": "reports/2025-12-02-ibk-37111.txt"
  },
  {
   "id": "r-invest-37090",
@@ -546,7 +604,9 @@
   "naver_url": "https://stock.naver.com/research/invest/37090",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/40/20251201_invest_998390000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2025-12-01-ibk-37090.pdf",
+  "text_file": "reports/2025-12-01-ibk-37090.txt"
  },
  {
   "id": "r-invest-36922",
@@ -565,7 +625,9 @@
   "naver_url": "https://stock.naver.com/research/invest/36922",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/40/20251114_invest_631584000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2025-11-14-ibk-36922.pdf",
+  "text_file": "reports/2025-11-14-ibk-36922.txt"
  },
  {
   "id": "r-invest-36821",
@@ -583,7 +645,9 @@
   "naver_url": "https://stock.naver.com/research/invest/36821",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/40/20251104_invest_424812000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2025-11-04-ibk-36821.pdf",
+  "text_file": "reports/2025-11-04-ibk-36821.txt"
  },
  {
   "id": "r-invest-36592",
@@ -601,7 +665,9 @@
   "naver_url": "https://stock.naver.com/research/invest/36592",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/40/20251014_invest_595722000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2025-10-14-ibk-36592.pdf",
+  "text_file": "reports/2025-10-14-ibk-36592.txt"
  },
  {
   "id": "r-invest-36470",
@@ -620,7 +686,9 @@
   "naver_url": "https://stock.naver.com/research/invest/36470",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/40/20250926_invest_310286000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2025-09-26-ibk-36470.pdf",
+  "text_file": "reports/2025-09-26-ibk-36470.txt"
  },
  {
   "id": "r-invest-36188",
@@ -638,7 +706,9 @@
   "naver_url": "https://stock.naver.com/research/invest/36188",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/40/20250902_invest_571156000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2025-09-02-ibk-36188.pdf",
+  "text_file": "reports/2025-09-02-ibk-36188.txt"
  },
  {
   "id": "r-invest-36120",
@@ -657,7 +727,9 @@
   "naver_url": "https://stock.naver.com/research/invest/36120",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/40/20250827_invest_513373000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2025-08-27-ibk-36120.pdf",
+  "text_file": "reports/2025-08-27-ibk-36120.txt"
  },
  {
   "id": "r-invest-35618",
@@ -675,7 +747,9 @@
   "naver_url": "https://stock.naver.com/research/invest/35618",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/40/20250711_invest_115686000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2025-07-11-ibk-35618.pdf",
+  "text_file": "reports/2025-07-11-ibk-35618.txt"
  },
  {
   "id": "r-invest-35411",
@@ -693,7 +767,9 @@
   "naver_url": "https://stock.naver.com/research/invest/35411",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/40/20250624_invest_487775000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2025-06-24-ibk-35411.pdf",
+  "text_file": "reports/2025-06-24-ibk-35411.txt"
  },
  {
   "id": "r-invest-34936",
@@ -711,7 +787,9 @@
   "naver_url": "https://stock.naver.com/research/invest/34936",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/40/20250513_invest_842390000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2025-05-13-ibk-34936.pdf",
+  "text_file": "reports/2025-05-13-ibk-34936.txt"
  },
  {
   "id": "r-invest-34745",
@@ -729,7 +807,9 @@
   "naver_url": "https://stock.naver.com/research/invest/34745",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/40/20250422_invest_117703000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2025-04-22-ibk-34745.pdf",
+  "text_file": "reports/2025-04-22-ibk-34745.txt"
  },
  {
   "id": "r-invest-34627",
@@ -747,7 +827,9 @@
   "naver_url": "https://stock.naver.com/research/invest/34627",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/40/20250409_invest_464845000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2025-04-09-ibk-34627.pdf",
+  "text_file": "reports/2025-04-09-ibk-34627.txt"
  },
  {
   "id": "r-invest-34554",
@@ -765,25 +847,9 @@
   "naver_url": "https://stock.naver.com/research/invest/34554",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/40/20250403_invest_557395000.pdf",
   "code_url": "",
-  "source": "naver"
- },
- {
-  "id": "r-invest-34493",
-  "date": "2025-03-28",
-  "house": "IBK투자증권",
-  "category": "invest",
-  "title_ko": "[IBKS Market Comment] 공매도 재개 영향과 시사점",
-  "title_en": "[IBKS Market Comment] The resumption of short selling: impact and implications",
-  "role": "contributor",
-  "pages": 8,
-  "topics": [
-   "flows"
-  ],
-  "summary_ko": "1. 시장 측면에서 부정적 영향은 크지 않을 전망\n\n3월 31일 공매도 재개가 시장에 미치는 부정적 영향은 제한될 전망이다. 공매도의 타깃이 될 일부 종목이나 업종에서는 부담이 될 수 있으나 시장 전반에 미치는 영향은 크지 않을 것으로 예상되고, 숏 자금들의 주가 하강 영향력보다 롱 자금들의 주가 상승 영향력이 더 클 것으로 예상된다. 또한, 단기 트레이딩 자금들이 유입되면서 공매도 재개 이후 외국인의 시장 참여가 증가되고 수급 환경도 오히려 개선될 가능성이 크다고 판단된다. 이와 같은 생각하는 몇 가지 이유를 생각해 보면 다음과 같다.",
-  "naver_url": "https://stock.naver.com/research/invest/34493",
-  "pdf_url": "https://stock.pstatic.net/stock-research/invest/40/20250328_invest_274370000.pdf",
-  "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2025-04-03-ibk-34554.pdf",
+  "text_file": "reports/2025-04-03-ibk-34554.txt"
  },
  {
   "id": "r-invest-34330",
@@ -801,7 +867,9 @@
   "naver_url": "https://stock.naver.com/research/invest/34330",
   "pdf_url": "https://stock.pstatic.net/stock-research/invest/40/20250312_invest_472488000.pdf",
   "code_url": "https://github.com/SnowKonn/IBKS_VOL_Report",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2025-03-12-ibk-34330.pdf",
+  "text_file": "reports/2025-03-12-ibk-34330.txt"
  },
  {
   "id": "r-market-31551",
@@ -819,7 +887,9 @@
   "naver_url": "https://stock.naver.com/research/market/31551",
   "pdf_url": "https://stock.pstatic.net/stock-research/market/40/20250304_market_252651000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2025-03-04-ibk-31551.pdf",
+  "text_file": "reports/2025-03-04-ibk-31551.txt"
  },
  {
   "id": "r-market-31351",
@@ -837,7 +907,9 @@
   "naver_url": "https://stock.naver.com/research/market/31351",
   "pdf_url": "https://stock.pstatic.net/stock-research/market/40/20250210_market_811112000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2025-02-10-ibk-31351.pdf",
+  "text_file": "reports/2025-02-10-ibk-31351.txt"
  },
  {
   "id": "r-market-31300",
@@ -855,7 +927,9 @@
   "naver_url": "https://stock.naver.com/research/market/31300",
   "pdf_url": "https://stock.pstatic.net/stock-research/market/40/20250204_market_179391000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2025-02-04-ibk-31300.pdf",
+  "text_file": "reports/2025-02-04-ibk-31300.txt"
  },
  {
   "id": "r-market-31280",
@@ -873,7 +947,9 @@
   "naver_url": "https://stock.naver.com/research/market/31280",
   "pdf_url": "https://stock.pstatic.net/stock-research/market/40/20250203_market_754222000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2025-02-03-ibk-31280.pdf",
+  "text_file": "reports/2025-02-03-ibk-31280.txt"
  },
  {
   "id": "r-market-31263",
@@ -891,7 +967,9 @@
   "naver_url": "https://stock.naver.com/research/market/31263",
   "pdf_url": "https://stock.pstatic.net/stock-research/market/40/20250131_market_27355000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2025-01-31-ibk-31263.pdf",
+  "text_file": "reports/2025-01-31-ibk-31263.txt"
  },
  {
   "id": "r-market-31215",
@@ -909,7 +987,9 @@
   "naver_url": "https://stock.naver.com/research/market/31215",
   "pdf_url": "https://stock.pstatic.net/stock-research/market/40/20250122_market_65345000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2025-01-22-ibk-31215.pdf",
+  "text_file": "reports/2025-01-22-ibk-31215.txt"
  },
  {
   "id": "r-market-31188",
@@ -928,7 +1008,9 @@
   "naver_url": "https://stock.naver.com/research/market/31188",
   "pdf_url": "https://stock.pstatic.net/stock-research/market/40/20250120_market_104257000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2025-01-20-ibk-31188.pdf",
+  "text_file": "reports/2025-01-20-ibk-31188.txt"
  },
  {
   "id": "r-market-31110",
@@ -946,7 +1028,9 @@
   "naver_url": "https://stock.naver.com/research/market/31110",
   "pdf_url": "https://stock.pstatic.net/stock-research/market/40/20250113_market_225862000.pdf",
   "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2025-01-13-ibk-31110.pdf",
+  "text_file": "reports/2025-01-13-ibk-31110.txt"
  },
  {
   "code_url": "",
@@ -964,7 +1048,9 @@
   "summary_ko": "",
   "naver_url": "https://www.ibks.com/investment/research/strategy_view.do?seq=1984&gubun=STRATEGY&popup=null",
   "pdf_url": "",
-  "source": "ibks"
+  "source": "ibks",
+  "file": "reports/2025-01-09-ibk-1984.pdf",
+  "text_file": "reports/2025-01-09-ibk-1984.txt"
  },
  {
   "id": "r-market-31062",
@@ -982,60 +1068,8 @@
   "naver_url": "https://stock.naver.com/research/market/31062",
   "pdf_url": "https://stock.pstatic.net/stock-research/market/40/20250108_market_605208000.pdf",
   "code_url": "",
-  "source": "naver"
- },
- {
-  "id": "r-invest-32302",
-  "date": "2024-08-13",
-  "house": "IBK투자증권",
-  "category": "invest",
-  "title_ko": "자연어 모델 구축을 위한 LLM 플랫폼 활용법과 실제 적용 사례",
-  "title_en": "Using LLM platforms to build natural-language models, with applied cases",
-  "role": "contributor",
-  "pages": 40,
-  "topics": [
-   "method"
-  ],
-  "summary_ko": "모델 선택 및 근거\n\n- 목적: PDF 내용을 기반으로 자연어 모델을 구축\n- AI 선택: Geminai 1.5 Pro\n- 방법: Google AI Studio 서비스 활용, 프롬프트 테스트, 구현\n- 대량의 PDF에서 텍스트를 추출해서 질문 작업에 제미나이 1.5 PRO를 선호\n- 현재 다양한 LLM 모델들 개발 중이며, 사용처에 따라 선호 LLM 모델은 있지만 성능 차이는 없다고 판단\n- 다량의 텍스트 데이터를 포함하고 있는 긴 페이지의 PDF를 읽기 위해서는 AI 모델의 윈도우 컨텍스트가 중요\n- 컨텍스트 윈도우 관점에서 Geminai 1.5 PRO를 선택\n- 구글 최신 AI Geminai 1.5 Pro를 활용하여 다양한 프롬프트를 실행하고, 이를 자동화 코드로 전환   (https://aistudio.google.com/)",
-  "naver_url": "https://stock.naver.com/research/invest/32302",
-  "pdf_url": "https://stock.pstatic.net/stock-research/invest/40/20240813_invest_361587000.pdf",
-  "code_url": "",
-  "source": "naver"
- },
- {
-  "id": "r-invest-31453",
-  "date": "2024-05-30",
-  "house": "IBK투자증권",
-  "category": "invest",
-  "title_ko": "[IBKS ESG Report] ESG, 방향성과 기대와의 괴리",
-  "title_en": "[IBKS ESG Report] ESG: the gap between direction and expectations",
-  "role": "contributor",
-  "pages": 33,
-  "topics": [
-   "strategy"
-  ],
-  "summary_ko": "▶ ESG 자금 동향과 방향성\n\n- 기대와 달리 부진한 글로벌 지속가능펀드 자금 흐름\n- 그럼에도 글로벌 규제 강화 움직임 속 ESG 투자 방향성은 뚜렷해\n- 각국 표준 규범 마련 및 의무 공시제도 도입, 그린워싱 방지 법률 도입 등으로 ESG 투자 리스크 억제",
-  "naver_url": "https://stock.naver.com/research/invest/31453",
-  "pdf_url": "https://stock.pstatic.net/stock-research/invest/40/20240530_invest_776567000.pdf",
-  "code_url": "",
-  "source": "naver"
- },
- {
-  "id": "r-invest-29293",
-  "date": "2023-11-10",
-  "house": "IBK투자증권",
-  "category": "invest",
-  "title_ko": "New Factor: 낙폭과대 주식 중에 중에 반등 가능한 주식을 찾는 법",
-  "title_en": "New Factor: how to find the oversold stocks that can rebound",
-  "role": "contributor",
-  "pages": 48,
-  "topics": [
-   "factor"
-  ],
-  "summary_ko": "퀀트 모델 개요\n- [역모멘텀 포트폴리오– 모멘텀 포트폴리오], [역모멘텀 포트폴리오1 – 역모멘텀 포트폴리오 2]을 기반으로 롱숏 투자\nor [역모멘텀 포트폴리오 1] Long only 투자- 유니버스: 코스피 200 종목, 코스닥 150 종목 중 전체 시가총액 평균의 1.5배 이상 종목- 리밸런싱: 1개월, 매월 초 종가 매수, 매월 말 종가 매도",
-  "naver_url": "https://stock.naver.com/research/invest/29293",
-  "pdf_url": "https://ssl.pstatic.net/imgstock/upload/research/invest/1699572611565.pdf",
-  "code_url": "",
-  "source": "naver"
+  "source": "naver",
+  "file": "reports/2025-01-08-ibk-31062.pdf",
+  "text_file": "reports/2025-01-08-ibk-31062.txt"
  }
 ]

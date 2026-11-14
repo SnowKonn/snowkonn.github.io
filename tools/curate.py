@@ -9,12 +9,15 @@ Rules
   matched by the "_exclude" patterns in curation.json (decision 2026-11-13).
 - curation.json per-id overrides: title_en, topics, role, drop, keep, code_url.
 - curation.json "_extra": reports found on the broker's own board but not on Naver.
+- Each kept report's PDF is copied to docs/reports/ with a plain-text extraction
+  beside it (decision 2026-11-14: PDFs are published with the list).
 """
 from __future__ import annotations
 
 import html
 import json
 import re
+import shutil
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -51,6 +54,37 @@ def load_hits() -> list[dict]:
     return [{**row, "summary": summaries.get(key, ""),
              "detail_url": f"https://stock.naver.com/research/{row['category']}/{row['nid']}"}
             for key, row in rows.items() if row.get("hit")]
+
+
+HOUSE_KEY = {"대신증권": "daishin", "IBK투자증권": "ibk"}
+REPORTS = ROOT / "docs" / "reports"
+
+
+def publish_files(pubs: list[dict]) -> None:
+    """Copy each report's PDF into docs/reports and write its text next to it."""
+    import fitz  # PyMuPDF, only needed here
+    REPORTS.mkdir(parents=True, exist_ok=True)
+    keep = set()
+    for pub in pubs:
+        kind, nid = pub["id"].split("-")[1:3]
+        stem = f"{pub['date']}-{HOUSE_KEY[pub['house']]}-{nid}"
+        src = RAW / "pdf" / f"{kind}_{nid}.pdf"
+        pdf, txt = REPORTS / f"{stem}.pdf", REPORTS / f"{stem}.txt"
+        if src.exists() and not pdf.exists():
+            shutil.copyfile(src, pdf)
+        if pdf.exists() and not txt.exists():
+            doc = fitz.open(pdf)
+            head = [f"Title: {pub['title_ko']}", f"English title (translation): {pub['title_en']}",
+                    f"Author: 권순호 (SoonHo Kwon)", f"Publisher: {pub['house']}", f"Date: {pub['date']}",
+                    f"Pages: {doc.page_count}", f"Original listing: {pub['naver_url']}", ""]
+            body = [f"\n--- page {i + 1} ---\n{page.get_text().strip()}" for i, page in enumerate(doc)]
+            txt.write_text("\n".join(head + body) + "\n")
+        pub["file"] = f"reports/{stem}.pdf" if pdf.exists() else ""
+        pub["text_file"] = f"reports/{stem}.txt" if txt.exists() else ""
+        keep |= {pdf.name, txt.name}
+    for stale in REPORTS.iterdir():
+        if stale.name not in keep:
+            stale.unlink()
 
 
 def main() -> None:
@@ -91,6 +125,7 @@ def main() -> None:
         })
     pubs += [{"code_url": "", **x} for x in CUR.get("_extra", [])]
     pubs.sort(key=lambda r: (r["date"], r["id"]), reverse=True)
+    publish_files(pubs)
     (ROOT / "data" / "publications.json").write_text(json.dumps(pubs, ensure_ascii=False, indent=1))
     (RAW / "excluded.json").write_text(json.dumps(
         [{"why": w, "date": m["first_date"], "house": m["broker"], "pages": m.get("pages"), "title": m["title"]}

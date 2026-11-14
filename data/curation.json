@@ -270,7 +270,9 @@
   "topics": [
    "flows"
   ],
-  "role": "contributor"
+  "role": "contributor",
+  "drop": true,
+  "why": "co-authored; list is sole-author only"
  },
  "r-market-31551": {
   "title_en": "[Market: Soon to Know] After the sell-off: narratives unwound and narratives born",
@@ -352,21 +354,27 @@
   "topics": [
    "method"
   ],
-  "role": "contributor"
+  "role": "contributor",
+  "drop": true,
+  "why": "co-authored; list is sole-author only"
  },
  "r-invest-31453": {
   "title_en": "[IBKS ESG Report] ESG: the gap between direction and expectations",
   "topics": [
    "strategy"
   ],
-  "role": "contributor"
+  "role": "contributor",
+  "drop": true,
+  "why": "co-authored; list is sole-author only"
  },
  "r-invest-29293": {
   "title_en": "New Factor: how to find the oversold stocks that can rebound",
   "topics": [
    "factor"
   ],
-  "role": "contributor"
+  "role": "contributor",
+  "drop": true,
+  "why": "co-authored; list is sole-author only"
  },
  "r-invest-29197": {
   "drop": true,

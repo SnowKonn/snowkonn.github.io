@@ -96,11 +96,11 @@
    }
   ],
   "pubs_h": "발간 리포트",
-  "pubs_note": "네이버 증권 리서치와 IBK투자증권 리서치 게시판에서 작성자로 확인되는 리포트를 모았다. 월간 전략 합본과 주간 전략, 일일 시황은 뺐다. 제목을 누르면 원문이 실린 페이지로 간다.",
+  "pubs_note": "네이버 증권 리서치와 IBK투자증권 리서치 게시판에서 단독 작성자로 확인되는 리포트를 모았다. 월간 전략 합본과 주간 전략, 일일 시황, 공동 집필은 뺐다. 제목을 누르면 원문이 실린 페이지로 가고, PDF와 본문 텍스트는 여기에서 바로 열 수 있다.",
   "tools_h": "공개 저장소",
   "agents_h": "AI 에이전트용 색인",
   "agents_note": "사람이 읽는 이 페이지와 같은 목록을 기계가 읽기 쉬운 형식으로도 둔다. 인용할 때는 리포트 제목, 발간일, 발간 증권사를 함께 적고 원문 링크를 붙인다.",
-  "disclaimer": "개인 페이지이며 여기 실린 내용은 소속 회사의 공식 견해가 아니다. 각 리포트의 저작권은 발간 증권사에 있고, 이 페이지는 목록과 원문 링크를 제공한다. 투자 권유가 아니다.",
+  "disclaimer": "개인 페이지이며 여기 실린 내용은 소속 회사의 공식 견해가 아니다. 각 리포트의 저작권은 발간 증권사에 있고, 파일은 작성자 본인의 발간 기록으로 보관한다. 투자 권유가 아니다.",
   "ui": {
    "all": "전체",
    "search": "제목·요약 검색",
@@ -117,7 +117,8 @@
    "to_present": "현재",
    "reports": "편",
    "skip": "리포트 목록으로 건너뛰기",
-   "code": "코드"
+   "code": "코드",
+   "text": "본문 텍스트"
   }
  },
  "en": {
@@ -150,11 +151,11 @@
    }
   ],
   "pubs_h": "Publications",
-  "pubs_note": "Reports that name me as an author, collected from Naver Securities Research and the IBK Securities research board. Monthly house compilations, weekly strategy notes and daily market commentary are left out. The reports are in Korean; English titles are my translations, and each title links to the original listing.",
+  "pubs_note": "Reports of which I am the sole named author, collected from Naver Securities Research and the IBK Securities research board. Monthly house compilations, weekly strategy notes, daily market commentary and co-authored reports are left out. The reports are in Korean and English titles are my translations. Each title links to the original listing; the PDF and its plain text open from this site.",
   "tools_h": "Public repositories",
   "agents_h": "Index for AI agents",
   "agents_note": "The same list is published in machine-readable form. When citing, give the report title, publication date and publishing broker, and link to the original.",
-  "disclaimer": "This is a personal page and nothing here is an official view of my employer. Copyright in each report belongs to the publishing broker; this page provides a list and links to the originals. Nothing here is investment advice.",
+  "disclaimer": "This is a personal page and nothing here is an official view of my employer. Copyright in each report belongs to the publishing broker; the files are kept as the author's own record of publication. Nothing here is investment advice.",
   "ui": {
    "all": "All",
    "search": "Search titles",
@@ -171,7 +172,8 @@
    "to_present": "present",
    "reports": "reports",
    "skip": "Skip to the publication list",
-   "code": "Code"
+   "code": "Code",
+   "text": "Text"
   }
  },
  "repos": [
@@ -199,5 +201,6 @@
    "ko": "Git worktree와 PR 단위 작업, 정적 우선 배포를 휴대전화에서 익히는 학습 사이트.",
    "en": "A mobile-first field guide to Git worktrees, PR-sized work and static-first deployment."
   }
- ]
+ ],
+ "email": "soonho.kwon@daishin.com"
 }

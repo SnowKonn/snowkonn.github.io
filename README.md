@@ -11,8 +11,9 @@ Personal profile and publication list of SoonHo Kwon, quant analyst. Korean at `
 | `/llms.txt` | Overview and the full report list with titles, dates and links |
 | `/llms-full.txt` | The same list plus the Korean summary published with each report |
 | `/publications.json` | One structured record per report, with a `schema` entry describing the fields |
+| `/reports/` | One PDF and one plain-text extraction per report, named `<date>-<broker>-<id>` |
 
-A report is listed only if the author is named on its first page (PDF text, or OCR of the cover where the byline is set as outlines) or in the author column of the broker's research board. Reports that also name other analysts are marked `contributor`. Monthly house compilations, weekly strategy notes and routine daily commentary are left out. Copyright in each report belongs to the publishing broker; this repository holds the list and links to the originals.
+A report is listed only if the author is named on its first page (PDF text, or OCR of the cover where the byline is set as outlines) or in the author column of the broker's research board. Only sole-author reports are listed. Monthly house compilations, weekly strategy notes, routine daily commentary and co-authored reports are left out. Copyright in each report belongs to the publishing broker; the files are kept as the author's own record of publication.
 
 ## Layout
 

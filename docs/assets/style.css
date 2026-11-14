@@ -126,6 +126,8 @@ main section > h2 { font-family: var(--display); font-weight: 600; font-size: 1.
 main section > h2 small { display: block; font-family: var(--text); font-weight: 400; font-size: 0.8125rem; color: var(--muted); margin-top: 0.25rem; }
 main section > div > p { max-width: var(--measure); margin: 0 0 1rem; }
 
+.contact { display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; }
+
 .areas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 3rem; margin: 0; padding: 0; list-style: none; }
 .areas h3 { font-size: 1.0625rem; font-weight: 600; margin: 0 0 0.35rem; }
 .areas p { margin: 0; color: var(--muted); font-size: 0.9375rem; }

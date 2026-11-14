@@ -83,6 +83,7 @@ def tape(lang: str) -> str:
 
 def ledger(lang: str) -> str:
     ui, out = P[lang]["ui"], []
+    prefix = "" if lang == "ko" else "../"
     for year, group in groupby(PUBS, key=lambda r: r["date"][:4]):
         group = list(group)
         n = f"{len(group)}{ui['reports']}" if lang == "ko" else f"{len(group)} {ui['reports']}"
@@ -101,8 +102,10 @@ def ledger(lang: str) -> str:
                 meta.append(f'<span>{e(ui["contrib"])}</span>')
             if pub.get("code_url"):
                 meta.append(f'<a href="{e(pub["code_url"])}" rel="noopener">{ui["code"]}</a>')
-            if pub.get("pdf_url"):
-                meta.append(f'<a href="{e(pub["pdf_url"])}" rel="noopener">{ui["pdf"]}</a>')
+            if pub.get("file"):
+                meta.append(f'<a href="{prefix}{e(pub["file"])}">{ui["pdf"]}</a>')
+            if pub.get("text_file"):
+                meta.append(f'<a href="{prefix}{e(pub["text_file"])}">{ui["text"]}</a>')
             summary = ""
             if pub.get("summary_ko"):
                 summary = (f'<details><summary>{e(ui["summary"])}</summary>'
@@ -152,10 +155,12 @@ def agent_rows(lang: str) -> str:
          "The same list plus the Korean summary published with each report."),
         ("/publications.json", "리포트별 구조화 데이터. 필드 설명은 파일 안 schema 항목에 있다.",
          "Structured record per report. Field meanings are in the file's schema entry."),
+        ("/reports/", "리포트마다 PDF 한 개와 본문 텍스트(.txt) 한 개. 경로는 publications.json의 file_url, text_url에 있다.",
+         "One PDF and one plain-text file per report. Paths are in file_url and text_url of publications.json."),
     ]
-    return "".join(
-        f'<li><a href="{path}"><code>{path}</code></a><span>{e(ko if lang == "ko" else en)}</span></li>'
-        for path, ko, en in rows)
+    def name(path: str) -> str:                      # a folder has no index page to link to
+        return f"<code>{path}</code>" if path.endswith("/") else f'<a href="{path}"><code>{path}</code></a>'
+    return "".join(f'<li>{name(path)}<span>{e(ko if lang == "ko" else en)}</span></li>' for path, ko, en in rows)
 
 
 def jsonld() -> str:
@@ -236,7 +241,7 @@ def page(lang: str) -> str:
 <main class="wrap">
   <section id="about">
     <h2>{e(t['about_h'])}</h2>
-    <div>{about}<p><a href="{P['github']}" rel="me noopener">github.com/SnowKonn</a></p></div>
+    <div>{about}<p class="contact"><a href="mailto:{P['email']}">{P['email']}</a><a href="{P['github']}" rel="me noopener">github.com/SnowKonn</a></p></div>
   </section>
 
   <section id="areas">
@@ -291,7 +296,8 @@ def publications_json() -> str:
             "pages": "PDF page count", "topics": "topic keys assigned by the author of this page",
             "summary_ko": "summary text published with the report on Naver (Korean)",
             "naver_url": "original listing (Naver Securities Research, or the broker's own board when source is ibks)",
-            "pdf_url": "PDF hosted by Naver", "code_url": "public repository with the code behind the report, if any",
+            "pdf_url": "PDF hosted by Naver", "file_url": "PDF on this site", "text_url": "plain-text extraction of the PDF on this site",
+            "code_url": "public repository with the code behind the report, if any",
             "source": "naver | ibks: where the listing was found",
         },
         "author": {"name": P["name"]["en"], "name_ko": P["name"]["ko"], "url": BASE + "/"},
@@ -300,7 +306,9 @@ def publications_json() -> str:
                            "cover) or in the author column of the broker's research board. Monthly house compilations, "
                            "weekly strategy notes and routine daily commentary are left out.",
         "count": len(PUBS),
-        "publications": [{**pub, "house_en": house(pub)["en"]} for pub in PUBS],
+        "publications": [{**pub, "house_en": house(pub)["en"],
+                          "file_url": f"{BASE}/{pub['file']}" if pub.get("file") else "",
+                          "text_url": f"{BASE}/{pub['text_file']}" if pub.get("text_file") else ""} for pub in PUBS],
     }, ensure_ascii=False, indent=1)
 
 
@@ -314,11 +322,13 @@ def llms(full: bool) -> str:
         "- A report appears here only if the author is named on its first page or in the author column of the "
         "broker's research board. Entries marked co-authored name other analysts as well. Monthly house "
         "compilations, weekly strategy notes and routine daily commentary are left out.",
-        "- Copyright in each report belongs to the publishing broker. This site holds the list, the published summaries and links, not the reports themselves.",
+        "- Each report is kept here as a PDF and as plain text (reports/*.txt), which is the easiest form to read.",
+        "- Copyright in each report belongs to the publishing broker. The files are kept as the author's own record.",
         "- Nothing here is investment advice or an official view of the author's employer.", "",
         "## Machine-readable files", "",
         f"- [publications.json]({BASE}/publications.json): one structured record per report",
         f"- [llms-full.txt]({BASE}/llms-full.txt): this list with the Korean summary of each report",
+        f"- {BASE}/reports/: one PDF and one .txt per report, named <date>-<broker>-<id>",
         f"- [Korean page]({BASE}/) and [English page]({BASE}/en/)", "",
         f"## Publications ({len(PUBS)})", "",
     ]
@@ -327,17 +337,17 @@ def llms(full: bool) -> str:
         co = ", co-authored" if pub["role"] != "author" else ""
         topics = ", ".join(P["topics"][t]["en"] for t in pub.get("topics", []))
         tail = f", {topics}" if topics else ""
-        lines.append(f"- [{pub['title_ko']}{en}]({pub['naver_url']}): {pub['date']}, {house(pub)['en']}{co}{tail}")
+        text = f" Full text: {BASE}/{pub['text_file']}" if pub.get("text_file") else ""
+        lines.append(f"- [{pub['title_ko']}{en}]({pub['naver_url']}): {pub['date']}, {house(pub)['en']}{co}{tail}.{text}")
         if full and pub.get("summary_ko"):
             lines += ["", *[f"  {s}" for s in pub["summary_ko"].splitlines() if s.strip()], ""]
     return "\n".join(lines) + "\n"
 
 
 def main() -> None:
-    if SITE.exists():
-        shutil.rmtree(SITE)
-    (SITE / "assets").mkdir(parents=True)
-    (SITE / "en").mkdir()
+    for sub in ("assets", "en"):                     # docs/reports is kept: curate.py owns it
+        shutil.rmtree(SITE / sub, ignore_errors=True)
+        (SITE / sub).mkdir(parents=True)
     for name in ("style.css", "site.js"):
         shutil.copy(ROOT / "src" / name, SITE / "assets" / name)
     (SITE / "index.html").write_text(page("ko"))
