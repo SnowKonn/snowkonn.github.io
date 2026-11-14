@@ -149,14 +149,10 @@ def controls(lang: str) -> str:
 
 def agent_rows(lang: str) -> str:
     rows = [
-        ("/llms.txt", "사이트 개요와 전체 리포트 목록(제목, 날짜, 링크).",
-         "Site overview and the full report list with titles, dates and links."),
-        ("/llms-full.txt", "위 목록에 네이버 증권에 실린 요약문을 더한 전문.",
-         "The same list plus the Korean summary published with each report."),
-        ("/publications.json", "리포트별 구조화 데이터. 필드 설명은 파일 안 schema 항목에 있다.",
-         "Structured record per report. Field meanings are in the file's schema entry."),
-        ("/reports/", "리포트마다 PDF 한 개와 본문 텍스트(.txt) 한 개. 경로는 publications.json의 file_url, text_url에 있다.",
-         "One PDF and one plain-text file per report. Paths are in file_url and text_url of publications.json."),
+        ("/llms.txt", "전체 목록", "The full list"),
+        ("/llms-full.txt", "목록과 요약", "The list with summaries"),
+        ("/publications.json", "리포트별 데이터", "One record per report"),
+        ("/reports/", "리포트 PDF와 텍스트", "Report PDFs and their text"),
     ]
     def name(path: str) -> str:                      # a folder has no index page to link to
         return f"<code>{path}</code>" if path.endswith("/") else f'<a href="{path}"><code>{path}</code></a>'
@@ -194,8 +190,6 @@ def page(lang: str) -> str:
                    f'<a href="{there}" lang="ko" hreflang="ko">한국어</a><span aria-current="page">English</span>')
     posts = "".join(f'<li><span class="when">{e(when)}</span><span><strong>{e(h)}</strong> {e(n)}</span></li>'
                     for when, h, n in tenure(lang))
-    about = "".join(f"<p>{e(p)}</p>" for p in t["about"])
-    areas = "".join(f'<li><h3>{e(a["h"])}</h3><p>{e(a["p"])}</p></li>' for a in t["areas"])
     repos = "".join(f'<li><a href="{e(r["url"])}" rel="noopener">{e(r["name"])}</a><span>{e(r[lang])}</span></li>'
                     for r in P["repos"])
     updated = f"{TODAY:%Y.%m.%d}" if lang == "ko" else f"{TODAY:%-d %B %Y}"
@@ -233,22 +227,14 @@ def page(lang: str) -> str:
   <div class="wrap">
     <h1>{e(name)} <span class="alt" lang="{other}">{e(alt)}</span></h1>
     <p class="lede">{e(t['lede'])}</p>
+    <p class="role">{e(t['role'])}</p>
+    <p class="contact"><a href="mailto:{P['email']}">{P['email']}</a><a href="{P['github']}" rel="me noopener">github.com/SnowKonn</a></p>
     <ul class="posts">{posts}</ul>
     {tape(lang)}
   </div>
 </div>
 
 <main class="wrap">
-  <section id="about">
-    <h2>{e(t['about_h'])}</h2>
-    <div>{about}<p class="contact"><a href="mailto:{P['email']}">{P['email']}</a><a href="{P['github']}" rel="me noopener">github.com/SnowKonn</a></p></div>
-  </section>
-
-  <section id="areas">
-    <h2>{e(t['areas_h'])}</h2>
-    <div><ul class="areas">{areas}</ul></div>
-  </section>
-
   <section id="publications">
     <h2>{e(t['pubs_h'])}<small>{ui['count'].replace('{n}', str(len(PUBS)))}</small></h2>
     <div>
@@ -316,12 +302,12 @@ def llms(full: bool) -> str:
     lines = [
         f"# {P['name']['en']} ({P['name']['ko']})", "",
         f"> {P['en']['description']} Reports are written in Korean. English titles below are the author's own translations.", "",
-        "## About", "", *[f"- {p}" for p in P["en"]["about"]], "",
+        "## About", "", f"- {P['en']['role']}. Before that, IBK Securities.", f"- {P['en']['lede']}",
+        f"- Contact: {P['email']}, {P['github']}", "",
         "## How to use this index", "",
         "- Cite a report by its title, publication date and publishing broker, and link to its Naver listing.",
-        "- A report appears here only if the author is named on its first page or in the author column of the "
-        "broker's research board. Entries marked co-authored name other analysts as well. Monthly house "
-        "compilations, weekly strategy notes and routine daily commentary are left out.",
+        "- Only reports the author wrote alone are listed. Monthly house compilations, weekly strategy notes, "
+        "daily commentary and co-authored reports are left out.",
         "- Each report is kept here as a PDF and as plain text (reports/*.txt), which is the easiest form to read.",
         "- Copyright in each report belongs to the publishing broker. The files are kept as the author's own record.",
         "- Nothing here is investment advice or an official view of the author's employer.", "",

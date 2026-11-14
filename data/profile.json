@@ -68,138 +68,90 @@
  },
  "ko": {
   "title": "권순호 | 퀀트 애널리스트",
-  "description": "대신증권 퀀트 애널리스트 권순호의 소개와 발간 리포트 목록. 한국 주식시장의 투자주체 수급과 팩터를 연구한다.",
-  "lede": "한국 주식시장의 수급과 팩터를 연구하는 퀀트 애널리스트다.",
-  "about_h": "소개",
-  "about": [
-   "대신증권에서 퀀트 리포트 「Quant, Soon to Know」를 쓴다. 그 전에는 IBK투자증권에서 시황과 퀀트를 맡았다.",
-   "외국인, 기관, 개인을 비롯한 투자주체의 매매가 가격에 어떤 흔적을 남기는지, 그리고 매크로와 팩터, 수익률이 서로 어떻게 엮이는지를 실증으로 따진다.",
-   "데이터 수집부터 백테스트, 대시보드, 리포트 조판까지 필요한 도구는 직접 만들어 쓴다."
-  ],
-  "areas_h": "연구 영역",
-  "areas": [
-   {
-    "h": "투자주체 수급",
-    "p": "14개 투자주체의 매매를 2004년부터 추적해 수급이 가격에 미치는 영향을 검증한다."
-   },
-   {
-    "h": "팩터와 이익",
-    "p": "이익 추정치와 팩터 성과를 국면별로 나눠 보고, 지금 작동하는 스타일을 가린다."
-   },
-   {
-    "h": "매크로와 자산가격",
-    "p": "금리, 유동성, 환율 같은 거시 변수가 주식 수익률로 이어지는 경로를 본다."
-   },
-   {
-    "h": "리서치 자동화",
-    "p": "데이터 파이프라인과 백테스트, 리포트 제작 공정을 코드와 AI 에이전트로 묶는다."
-   }
-  ],
-  "pubs_h": "발간 리포트",
-  "pubs_note": "네이버 증권 리서치와 IBK투자증권 리서치 게시판에서 단독 작성자로 확인되는 리포트를 모았다. 월간 전략 합본과 주간 전략, 일일 시황, 공동 집필은 뺐다. 제목을 누르면 원문이 실린 페이지로 가고, PDF와 본문 텍스트는 여기에서 바로 열 수 있다.",
-  "tools_h": "공개 저장소",
-  "agents_h": "AI 에이전트용 색인",
-  "agents_note": "사람이 읽는 이 페이지와 같은 목록을 기계가 읽기 쉬운 형식으로도 둔다. 인용할 때는 리포트 제목, 발간일, 발간 증권사를 함께 적고 원문 링크를 붙인다.",
-  "disclaimer": "개인 페이지이며 여기 실린 내용은 소속 회사의 공식 견해가 아니다. 각 리포트의 저작권은 발간 증권사에 있고, 파일은 작성자 본인의 발간 기록으로 보관한다. 투자 권유가 아니다.",
+  "description": "권순호의 소개와 발간 리포트 목록.",
+  "lede": "투자, 기술, 사는 것에 관심 있습니다.",
+  "pubs_h": "리포트",
+  "pubs_note": "혼자 쓴 리포트만 모았습니다. 제목을 누르면 원문 페이지로 갑니다.",
+  "tools_h": "저장소",
+  "agents_h": "AI 에이전트용",
+  "agents_note": "같은 목록을 텍스트와 JSON으로도 올려 둡니다.",
+  "disclaimer": "개인 페이지입니다. 회사의 공식 견해가 아니고 투자 권유도 아닙니다. 리포트 저작권은 발간 증권사에 있습니다.",
   "ui": {
    "all": "전체",
    "search": "제목·요약 검색",
    "count": "{n}편",
-   "empty": "조건에 맞는 리포트가 없다. 필터를 풀어 본다.",
+   "empty": "조건에 맞는 리포트가 없습니다.",
    "summary": "요약",
    "pages": "{n}쪽",
    "contrib": "공동 집필",
    "pdf": "PDF",
-   "tape_rest": "막대 하나가 리포트 한 편이고, 높이는 분량이다. 막대에 올리면 제목이 보이고 누르면 목록의 해당 줄로 간다.",
+   "tape_rest": "막대 하나가 리포트 한 편, 높이는 쪽수입니다.",
    "key_contrib": "공동 집필",
-   "updated": "목록 갱신",
+   "updated": "갱신",
    "since": "첫 리포트",
    "to_present": "현재",
    "reports": "편",
    "skip": "리포트 목록으로 건너뛰기",
    "code": "코드",
-   "text": "본문 텍스트"
-  }
+   "text": "텍스트"
+  },
+  "role": "대신증권 퀀트 애널리스트"
  },
  "en": {
   "title": "SoonHo Kwon | Quant analyst",
-  "description": "Profile and publication list of SoonHo Kwon, quant analyst at Daishin Securities, covering investor flows and factors in Korean equities.",
-  "lede": "Quant analyst studying investor flows and factors in Korean equities.",
-  "about_h": "About",
-  "about": [
-   "I write the quant report series “Quant, Soon to Know” at Daishin Securities in Seoul. Before that I covered market strategy and quant at IBK Securities.",
-   "My work asks what the trading of foreign, institutional and retail investors leaves behind in prices, and how macro conditions, factors and returns are tied together.",
-   "I build the tools the research needs myself, from data collection and backtests to dashboards and report typesetting."
-  ],
-  "areas_h": "Research areas",
-  "areas": [
-   {
-    "h": "Investor flows",
-    "p": "Trading by 14 investor types in Korea, tracked since 2004, and its measured effect on prices."
-   },
-   {
-    "h": "Factors and earnings",
-    "p": "Earnings estimates and factor returns split by regime, to tell which styles work now."
-   },
-   {
-    "h": "Macro and asset prices",
-    "p": "How rates, liquidity and the exchange rate pass through to equity returns."
-   },
-   {
-    "h": "Research automation",
-    "p": "Data pipelines, backtests and report production tied together with code and AI agents."
-   }
-  ],
-  "pubs_h": "Publications",
-  "pubs_note": "Reports of which I am the sole named author, collected from Naver Securities Research and the IBK Securities research board. Monthly house compilations, weekly strategy notes, daily market commentary and co-authored reports are left out. The reports are in Korean and English titles are my translations. Each title links to the original listing; the PDF and its plain text open from this site.",
-  "tools_h": "Public repositories",
-  "agents_h": "Index for AI agents",
-  "agents_note": "The same list is published in machine-readable form. When citing, give the report title, publication date and publishing broker, and link to the original.",
-  "disclaimer": "This is a personal page and nothing here is an official view of my employer. Copyright in each report belongs to the publishing broker; the files are kept as the author's own record of publication. Nothing here is investment advice.",
+  "description": "SoonHo Kwon: profile and list of published reports.",
+  "lede": "Interested in investing, technology and life.",
+  "pubs_h": "Reports",
+  "pubs_note": "Only the reports I wrote alone. They are in Korean; the English titles are my own translations. Each title links to the original page.",
+  "tools_h": "Repositories",
+  "agents_h": "For AI agents",
+  "agents_note": "The same list is also available as text and JSON.",
+  "disclaimer": "A personal page. Not an official view of my employer and not investment advice. Copyright in each report belongs to the broker that published it.",
   "ui": {
    "all": "All",
    "search": "Search titles",
    "count": "{n} reports",
-   "empty": "No report matches. Clear a filter to see more.",
+   "empty": "No report matches.",
    "summary": "Summary (Korean)",
    "pages": "{n} pp.",
    "contrib": "Co-authored",
    "pdf": "PDF",
-   "tape_rest": "Each bar is one report and its height is the page count. Point at a bar for the title, or select it to jump to that row.",
+   "tape_rest": "Each bar is one report. Height is the page count.",
    "key_contrib": "Co-authored",
-   "updated": "List updated",
+   "updated": "Updated",
    "since": "First report",
    "to_present": "present",
    "reports": "reports",
    "skip": "Skip to the publication list",
    "code": "Code",
    "text": "Text"
-  }
+  },
+  "role": "Quant analyst at Daishin Securities"
  },
  "repos": [
   {
    "name": "krx-flow-telegram",
    "url": "https://github.com/SnowKonn/krx-flow-telegram",
-   "ko": "매 영업일 KRX 투자자별 수급에서 세 가지 스크린을 뽑아 텔레그램으로 보내는 자동화.",
-   "en": "Daily automation that screens KRX investor-flow data three ways and posts the result to Telegram."
+   "ko": "KRX 투자자별 수급을 매일 텔레그램으로 보내는 봇",
+   "en": "Sends daily KRX investor-flow screens to Telegram"
   },
   {
    "name": "SentimentIndex_Research",
    "url": "https://github.com/SnowKonn/SentimentIndex_Research",
-   "ko": "한국 주식시장 심리지수 연구 노트북.",
-   "en": "Notebooks from research on a sentiment index for the Korean stock market."
+   "ko": "한국 주식시장 심리지수 연구",
+   "en": "Research on a sentiment index for Korean stocks"
   },
   {
    "name": "IBKS_VOL_Report",
    "url": "https://github.com/SnowKonn/IBKS_VOL_Report",
-   "ko": "V.O.L 리포트에 쓴 시뮬레이션 코드와 분석.",
-   "en": "Simulation code and analysis behind the V.O.L report on market dynamics and volatility."
+   "ko": "변.동.대 리포트의 시뮬레이션 코드",
+   "en": "Simulation code for the V.O.L report"
   },
   {
    "name": "agent-production-fieldbook",
    "url": "https://github.com/SnowKonn/agent-production-fieldbook",
-   "ko": "Git worktree와 PR 단위 작업, 정적 우선 배포를 휴대전화에서 익히는 학습 사이트.",
-   "en": "A mobile-first field guide to Git worktrees, PR-sized work and static-first deployment."
+   "ko": "Git worktree와 PR 단위 작업을 익히는 모바일 학습 사이트",
+   "en": "A mobile guide to Git worktrees and PR-sized work"
   }
  ],
  "email": "soonho.kwon@daishin.com"

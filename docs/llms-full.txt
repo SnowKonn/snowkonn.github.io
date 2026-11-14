@@ -1,17 +1,17 @@
 # SoonHo Kwon (권순호)
 
-> Profile and publication list of SoonHo Kwon, quant analyst at Daishin Securities, covering investor flows and factors in Korean equities. Reports are written in Korean. English titles below are the author's own translations.
+> SoonHo Kwon: profile and list of published reports. Reports are written in Korean. English titles below are the author's own translations.
 
 ## About
 
-- I write the quant report series “Quant, Soon to Know” at Daishin Securities in Seoul. Before that I covered market strategy and quant at IBK Securities.
-- My work asks what the trading of foreign, institutional and retail investors leaves behind in prices, and how macro conditions, factors and returns are tied together.
-- I build the tools the research needs myself, from data collection and backtests to dashboards and report typesetting.
+- Quant analyst at Daishin Securities. Before that, IBK Securities.
+- Interested in investing, technology and life.
+- Contact: soonho.kwon@daishin.com, https://github.com/SnowKonn
 
 ## How to use this index
 
 - Cite a report by its title, publication date and publishing broker, and link to its Naver listing.
-- A report appears here only if the author is named on its first page or in the author column of the broker's research board. Entries marked co-authored name other analysts as well. Monthly house compilations, weekly strategy notes and routine daily commentary are left out.
+- Only reports the author wrote alone are listed. Monthly house compilations, weekly strategy notes, daily commentary and co-authored reports are left out.
 - Each report is kept here as a PDF and as plain text (reports/*.txt), which is the easiest form to read.
 - Copyright in each report belongs to the publishing broker. The files are kept as the author's own record.
 - Nothing here is investment advice or an official view of the author's employer.
