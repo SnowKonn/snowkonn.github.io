@@ -1,6 +1,6 @@
 """Build the static site (Korean at /, English at /en/) plus the agent index files.
 
-Inputs : data/profile.json, data/publications.json, src/style.css, src/site.js
+Inputs : data/profile.json, data/publications.json, data/study.json, src/style.css, src/site.js
 Outputs: docs/  (index.html, en/index.html, publications.json, llms.txt,
                  llms-full.txt, robots.txt, sitemap.xml, assets/)
 No third-party packages.
@@ -22,6 +22,7 @@ SITE = ROOT / "docs"
 P = json.loads((ROOT / "data" / "profile.json").read_text())
 PUBS = json.loads((ROOT / "data" / "publications.json").read_text())
 PUBS.sort(key=lambda r: (r["date"], r["id"]), reverse=True)
+STUDY = json.loads((ROOT / "data" / "study.json").read_text())   # notes kept as PDFs in docs/study
 BASE = P["base_url"].rstrip("/")
 TODAY = dt.date.today()
 FONT_API = "https://fonts.googleapis.com/css2?family={family}&display=swap&text={text}"
@@ -148,6 +149,23 @@ def controls(lang: str) -> str:
         </div>"""
 
 
+def study_section(lang: str) -> str:
+    t, notes = STUDY[lang], STUDY["notes"]
+    for note in notes:
+        if not (SITE / note["file"]).is_file():
+            raise SystemExit(f"study note missing: docs/{note['file']}")
+    rows = "".join(
+        f'<li><a href="/{e(n["file"])}">{e(n["label"][lang])}</a>'
+        f'<span>{e(n[lang])} {e(t["pages"].replace("{n}", str(n["pages"])))}</span></li>' for n in notes)
+    return f"""<section id="study">
+    <h2>{e(t['h'])}<small>{e(t['count'].replace('{n}', str(len(notes))))}</small></h2>
+    <div>
+      <p>{e(t['note'])}</p>
+      <ul class="rows">{rows}</ul>
+    </div>
+  </section>"""
+
+
 def agent_rows(lang: str) -> str:
     rows = [
         ("/llms.txt", "전체 목록", "The full list"),
@@ -267,6 +285,8 @@ def _page(lang: str) -> str:
     </div>
   </section>
 
+  {study_section(lang)}
+
   <section id="repositories">
     <h2>{e(t['tools_h'])}</h2>
     <div><ul class="rows">{repos}</ul></div>
@@ -344,6 +364,11 @@ def llms(full: bool) -> str:
         f"- [llms-full.txt]({BASE}/llms-full.txt): this list with the Korean summary of each report",
         f"- {BASE}/reports/: one PDF and one .txt per report, named <date>-<broker>-<id>",
         f"- [Korean page]({BASE}/) and [English page]({BASE}/en/)", "",
+        f"## Study notes written with AI ({len(STUDY['notes'])})", "",
+        "- Derivation notes in English, written by the author together with an AI model. Not peer reviewed; "
+        "the numbers in them are illustrative, not estimates for any security.",
+        *[f"- [{n['title']}]({BASE}/{n['file']}): {n['authors']}, {n['date']}, v{n['version']}, {n['pages']} pages. {n['en']}"
+          for n in STUDY["notes"]], "",
         f"## Publications ({len(PUBS)})", "",
     ]
     for pub in PUBS:
@@ -359,7 +384,7 @@ def llms(full: bool) -> str:
 
 
 def main() -> None:
-    for sub in ("assets", "en"):                     # docs/reports is kept: curate.py owns it
+    for sub in ("assets", "en"):                     # docs/reports (curate.py) and docs/study are kept
         shutil.rmtree(SITE / sub, ignore_errors=True)
         (SITE / sub).mkdir(parents=True)
     for name in ("style.css", "site.js"):
