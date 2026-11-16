@@ -10,10 +10,12 @@ from __future__ import annotations
 import datetime as dt
 import json
 import math
+import re
 import shutil
-from html import escape as e
+from html import escape as e, unescape
 from itertools import groupby
 from pathlib import Path
+from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT / "docs"
@@ -22,8 +24,7 @@ PUBS = json.loads((ROOT / "data" / "publications.json").read_text())
 PUBS.sort(key=lambda r: (r["date"], r["id"]), reverse=True)
 BASE = P["base_url"].rstrip("/")
 TODAY = dt.date.today()
-FONTS = ("https://fonts.googleapis.com/css2?family=Hahmlet:wght@300;400;600"
-         "&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap")
+FONT_API = "https://fonts.googleapis.com/css2?family={family}&display=swap&text={text}"
 
 
 def house(pub: dict) -> dict:
@@ -179,7 +180,29 @@ def jsonld() -> str:
     return json.dumps(data, ensure_ascii=False, separators=(",", ":"))
 
 
-def page(lang: str) -> str:
+def visible_text(markup: str) -> str:
+    return unescape(re.sub(r"<script.*?</script>|<style.*?</style>|<[^>]+>", " ", markup, flags=re.S))
+
+
+def font_links(doc: str) -> str:
+    """Google Fonts stylesheets cut down to the characters this page shows.
+
+    The full Korean families come as ~20 files per weight (about 3 MB for this page);
+    a text= subset is one small file per weight. Characters outside the subset fall back to
+    the system Korean font, so a later edit can never leave a blank glyph.
+    """
+    ascii_ = {chr(c) for c in range(32, 127)}
+    body = {c for c in visible_text(doc) if not c.isspace()} | ascii_
+    heads = " ".join(visible_text(m) for m in re.findall(
+        r"<(?:h1|h2|h3)\b.*?</(?:h1|h2|h3)>|<p class=\"lede\">.*?</p>", doc, flags=re.S))
+    display = {c for c in heads if not c.isspace()} | ascii_ | set("0123456789")
+    pack = lambda chars: quote("".join(sorted(chars)))
+    return "\n".join(
+        f'<link rel="stylesheet" href="{e(FONT_API.format(family=fam, text=pack(chars)))}">'
+        for fam, chars in (("Hahmlet:wght@300;400;600", display), ("IBM+Plex+Sans+KR:wght@400;500", body)))
+
+
+def _page(lang: str) -> str:
     t, ui = P[lang], P[lang]["ui"]
     other = "en" if lang == "ko" else "ko"
     prefix = "" if lang == "ko" else "../"
@@ -211,7 +234,7 @@ def page(lang: str) -> str:
 <meta property="og:url" content="{BASE}{here}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="{FONTS}">
+@@FONTS@@
 <link rel="stylesheet" href="{prefix}assets/style.css">
 <script type="application/ld+json">{jsonld()}</script>
 </head>
@@ -268,6 +291,11 @@ def page(lang: str) -> str:
 </body>
 </html>
 """
+
+
+def page(lang: str) -> str:
+    doc = _page(lang)
+    return doc.replace("@@FONTS@@", font_links(doc.replace("@@FONTS@@", "")), 1)
 
 
 def publications_json() -> str:

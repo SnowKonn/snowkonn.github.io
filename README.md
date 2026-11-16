@@ -28,7 +28,8 @@ tools/match_ibks.py      IBK board rows by the author <-> Naver listings, by att
 tools/recheck_ibk.py     second-pass full-page OCR of IBK non-hits
 tools/ocr.swift          macOS Vision OCR helper (swiftc -O tools/ocr.swift -o data/raw/bin/ocr)
 tools/curate.py          raw hits + curation -> data/publications.json
-tools/build_site.py      data + src -> docs/
+tools/build_site.py      data + src -> docs/ (also cuts the web fonts down to the characters on the page)
+tools/auto_update.py     daily job: new sole-author Daishin report -> curate -> build -> commit -> push
 docs/                    the published site (GitHub Pages serves this folder)
 ```
 
@@ -39,3 +40,12 @@ python tools/collect_reports.py --floor 2026-10   # re-scan recent months (needs
 python tools/curate.py                             # then add English titles and topics in data/curation.json
 python tools/build_site.py
 ```
+
+## Automatic update
+
+`tools/auto_update.py` runs daily at 19:30 from launchd (`~/Library/LaunchAgents/com.snowkonn.site-autoupdate.plist`, log in `~/Library/Logs/snowkonn-site-autoupdate.log`). It scans the current and previous month of Naver research for Daishin Securities, keeps a report only if the author is named on its first pages, builds the site, commits and pushes. It stops with a Telegram alert (`~/.openclaw/scripts/notify-ops.sh`) if the working tree is dirty, a step fails, or the push does not show up live.
+
+- A new report that also names another Daishin analyst on its cover is held, not published: `data/curation.json` gets `drop` and `hold` for it. To publish it, delete both and set `"keep": true`.
+- The English title and topics of a new report come from `claude -p` (sonnet). If that call fails the page shows the Korean title until you fill `title_en` and `topics` in `data/curation.json`.
+- Test: `python tools/auto_update.py --dry-run` (add `--pretend-new <id>` to walk through the publish path with an existing report).
+- IBK Securities reports are not scanned any more; the list for 2025-01 to 2026-02 is final.
