@@ -69,7 +69,7 @@
  "ko": {
   "title": "권순호 | 퀀트 애널리스트",
   "description": "권순호의 소개와 발간 리포트 목록.",
-  "lede": "투자, 기술, 사는 것에 관심 있습니다.",
+  "lede": "투자와 기술에 관심 있습니다.",
   "pubs_h": "리포트",
   "pubs_note": "혼자 쓴 리포트만 모았습니다. 제목을 누르면 원문 페이지로 갑니다.",
   "tools_h": "저장소",
@@ -100,7 +100,7 @@
  "en": {
   "title": "SoonHo Kwon | Quant analyst",
   "description": "SoonHo Kwon: profile and list of published reports.",
-  "lede": "Interested in investing, technology and life.",
+  "lede": "Interested in investing and technology.",
   "pubs_h": "Reports",
   "pubs_note": "Only the reports I wrote alone. They are in Korean; the English titles are my own translations. Each title links to the original page.",
   "tools_h": "Repositories",
