@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>When to sell · a stop-loss calculator</title>
+<meta name="description" content="Enter a scenario table and a volatility; the page computes the stop-loss that maximizes long-run growth.">
+<link rel="canonical" href="https://snowkonn.github.io/en/stoploss/">
+<link rel="alternate" hreflang="ko" href="https://snowkonn.github.io/stoploss/">
+<link rel="alternate" hreflang="en" href="https://snowkonn.github.io/en/stoploss/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="When to sell · a stop-loss calculator">
+<meta property="og:description" content="Enter a scenario table and a volatility; the page computes the stop-loss that maximizes long-run growth.">
+<meta property="og:url" content="https://snowkonn.github.io/en/stoploss/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@300;400;600&amp;display=swap&amp;text=%20%21%22%23%24%25%26%27%28%29%2A%2B%2C-./0123456789%3A%3B%3C%3D%3E%3F%40ABCDEFGHIJKLMNOPQRSTUVWXYZ%5B%5C%5D%5E_%60abcdefghijklmnopqrstuvwxyz%7B%7C%7D~">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500&amp;display=swap&amp;text=%20%21%22%23%24%25%26%27%28%29%2A%2B%2C-./0123456789%3A%3B%3C%3D%3E%3F%40ABCDEFGHIJKLMNOPQRSTUVWXYZ%5B%5C%5D%5E_%60abcdefghijklmnopqrstuvwxyz%7B%7C%7D~%C2%B7%E2%86%90%E2%88%92%EA%B5%AD%EC%96%B4%ED%95%9C">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="stylesheet" href="../../assets/tool.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap">
+    <p class="series">Quant, Soon to Know</p>
+    <nav class="lang" aria-label="Language"><a href="/stoploss/" lang="ko" hreflang="ko">한국어</a><span aria-current="page">English</span></nav>
+  </div>
+</header>
+
+<div class="tool-head">
+  <div class="wrap">
+    <a class="back" href="/en/">← Profile</a>
+    <h1>When to sell</h1>
+    <p class="lede">Enter scenarios and a volatility. The page computes the stop-loss that maximizes long-run growth.</p>
+  </div>
+</div>
+
+<main class="wrap tool">
+  <section id="inputs">
+    <h2>Inputs</h2>
+    <div>
+      <p>The scenarios are the investor&#x27;s own. The volatility is loaded from data or typed in.</p>
+      <form>
+        <div class="fields">
+          <div><label for="asset">Asset class</label><select id="asset"></select></div>
+          <fieldset><legend>Window</legend><div class="radios">
+            <label><input type="radio" name="win" value="1y" checked> Last year</label>
+            <label><input type="radio" name="win" value="3y"> Last three years</label></div></fieldset>
+          <div><label for="sigma">Volatility (% a year)</label><input id="sigma" type="number" value="30" min="1" max="300" step="0.1" inputmode="decimal"></div>
+        </div>
+        <p class="hint" id="vol-note" aria-live="polite"></p>
+        <div class="scroll"><table class="in" id="sc">
+          <caption>Scenario table</caption>
+          <thead><tr><th>Scenario</th><th>Probability (%)</th><th>Expected return (%)</th><th></th></tr></thead>
+          <tbody></tbody>
+        </table></div>
+        <p class="actions"><button type="button" id="add">Add a scenario</button></p>
+        <p class="hint" id="psum" aria-live="polite"></p>
+        <div class="fields">
+          <div><label for="horizon">Scenario period (years)</label><input id="horizon" type="number" value="1" min="0.1" max="30" step="0.25" inputmode="decimal"></div>
+          <div><label for="entry">Entry price</label><input id="entry" type="number" min="0" step="any" inputmode="decimal" placeholder="optional"></div>
+        </div>
+        <p>With an entry price, the current price and the time since entry show how the scenario probabilities have moved.</p>
+        <div class="fields">
+          <div><label for="cur">Current price</label><input id="cur" type="number" min="0" step="any" inputmode="decimal" placeholder="optional"></div>
+          <div><label for="months">Months since entry</label><input id="months" type="number" min="0" step="1" inputmode="decimal" placeholder="optional"></div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section id="output">
+    <h2>Result</h2>
+    <div id="result" aria-live="polite"></div>
+  </section>
+
+  <section id="now">
+    <h2>Where it stands</h2>
+    <div id="now-out" aria-live="polite"></div>
+  </section>
+
+  <section id="assumptions">
+    <h2>Assumptions</h2>
+    <div>
+      <ul class="plain"><li>The return is earned as a rate: in each scenario the price rises or falls at a constant rate, with volatility on top.</li><li>A scenario lasts for the period of the table on average, and its end is not known in advance.</li><li>A sale is not undone, and the proceeds wait in cash.</li><li>The whole account is in the position.</li></ul>
+      <h3>When the assumptions change</h3>
+      <ul class="plain"><li>With a fixed end date the stop is tighter and moves with time.</li><li>Under these assumptions a rise in the price is never a reason to sell. A better use of the capital, or a change in the remaining expected return, is a separate question.</li><li>The volatility is measured from past data. The stop is computed on the assumption that the scenarios entered are right.</li></ul>
+      <p>The derivation is in the study note, Part I. <a href="/study/stoploss-part1-rate.pdf">Part I (PDF)</a></p>
+      <p class="note">Volatility data: daily closes from Yahoo Finance, as of 2026-11-17.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>A personal page. Not an official view of my employer and not investment advice. Copyright in each report belongs to the broker that published it.</p>
+    <p>Updated 17 November 2026</p>
+  </div>
+</footer>
+<div hidden>Up Middle Down Scenario Probability (%) Expected return (%) Expected return Compound growth (a year) Probability of the stop Remove Type in Equities Bonds Commodities Currencies Crypto Probabilities sum to {n}%. If the sum is not 100 they are rescaled. Last year {y1}%, last three years {y3}%. Last observation {d}. Volatility typed in. At least two scenarios are needed. Enter numbers for the probabilities and expected returns. The probabilities must sum to more than zero. An expected return must be above −100%. The volatility must be above 0 and at most 300%. The scenario period must be above 0 and at most 30 years. Stop-loss, from the entry price: as a price, {p} No stop-loss is better. No stop raises growth above holding without one. With these inputs it is better not to hold. Expected growth is not positive at any stop. The volatility outweighs the expected return. Growth without a stop (a year) Growth with the stop (a year) Probability of the stop Expected growth by position of the stop Stop-loss (from the entry price) No stop Expected growth a year by position of the stop. The dot is the highest point. Compound growth is the expected return turned into a log return a year, less half the squared volatility. Enter the entry price, the current price and the months since entry. Return since entry Remaining expected growth (a year) At entry Now The current price is below the stop. {d}% above the stop. While remaining expected growth is positive there is no reason to sell. After it turns negative, the rule of this calculation still waits until the stop is reached. Probability KOSPI KOSDAQ S&amp;P 500 Nasdaq 100 Russell 2000 PHLX Semiconductor Nikkei 225 Euro Stoxx 50 Shanghai Composite Emerging equities (EEM) US long Treasuries (TLT) US aggregate bonds (AGG) US high yield (HYG) Gold Crude oil (WTI) Copper USD/KRW Bitcoin</div>
+<script type="application/json" id="i18n">{"up": "Up", "mid": "Middle", "down": "Down", "col_name": "Scenario", "col_p": "Probability (%)", "col_r": "Expected return (%)", "col_r_out": "Expected return", "col_mu": "Compound growth (a year)", "col_hit": "Probability of the stop", "remove": "Remove", "manual": "Type in", "groups": {"equity": "Equities", "bond": "Bonds", "commodity": "Commodities", "fx": "Currencies", "crypto": "Crypto"}, "psum": "Probabilities sum to {n}%. If the sum is not 100 they are rescaled.", "vol_note": "Last year {y1}%, last three years {y3}%. Last observation {d}.", "vol_manual": "Volatility typed in.", "err_rows": "At least two scenarios are needed.", "err_number": "Enter numbers for the probabilities and expected returns.", "err_prob": "The probabilities must sum to more than zero.", "err_return": "An expected return must be above −100%.", "err_sigma": "The volatility must be above 0 and at most 300%.", "err_horizon": "The scenario period must be above 0 and at most 30 years.", "stop_label": "Stop-loss, from the entry price:", "stop_price": "as a price, {p}", "no_stop": "No stop-loss is better.", "no_stop_why": "No stop raises growth above holding without one.", "avoid": "With these inputs it is better not to hold.", "avoid_why": "Expected growth is not positive at any stop. The volatility outweighs the expected return.", "g_none": "Growth without a stop (a year)", "g_stop": "Growth with the stop (a year)", "p_stop": "Probability of the stop", "chart_alt": "Expected growth by position of the stop", "chart_x": "Stop-loss (from the entry price)", "chart_none": "No stop", "chart_cap": "Expected growth a year by position of the stop. The dot is the highest point.", "mu_note": "Compound growth is the expected return turned into a log return a year, less half the squared volatility.", "now_hint": "Enter the entry price, the current price and the months since entry.", "now_ret": "Return since entry", "now_D": "Remaining expected growth (a year)", "now_prior": "At entry", "now_post": "Now", "now_below": "The current price is below the stop.", "now_above": "{d}% above the stop.", "now_note": "While remaining expected growth is positive there is no reason to sell. After it turns negative, the rule of this calculation still waits until the stop is reached.", "col_p_out": "Probability"}</script>
+<script type="application/json" id="vol-data">{"generated": "2026-11-17", "source": "Yahoo Finance via yfinance", "method": "sample standard deviation of daily log returns over the last 252 and 756 observations, annualized with the observations per year measured from the dates", "assets": [{"id": "kospi", "ticker": "^KS11", "group": "equity", "ko": "코스피", "en": "KOSPI", "vol_1y": 0.5567, "vol_3y": 0.3593, "last": "2026-11-17", "n": 1220, "per_year": 243.8}, {"id": "kosdaq", "ticker": "^KQ11", "group": "equity", "ko": "코스닥", "en": "KOSDAQ", "vol_1y": 0.5025, "vol_3y": 0.3477, "last": "2026-11-17", "n": 1220, "per_year": 243.8}, {"id": "spx", "ticker": "^GSPC", "group": "equity", "ko": "S&P 500", "en": "S&P 500", "vol_1y": 0.1373, "vol_3y": 0.1515, "last": "2026-11-16", "n": 1254, "per_year": 250.8}, {"id": "ndx", "ticker": "^NDX", "group": "equity", "ko": "나스닥 100", "en": "Nasdaq 100", "vol_1y": 0.2149, "vol_3y": 0.2101, "last": "2026-11-16", "n": 1254, "per_year": 250.8}, {"id": "rut", "ticker": "^RUT", "group": "equity", "ko": "러셀 2000", "en": "Russell 2000", "vol_1y": 0.1871, "vol_3y": 0.2112, "last": "2026-11-16", "n": 1254, "per_year": 250.8}, {"id": "sox", "ticker": "^SOX", "group": "equity", "ko": "필라델피아 반도체", "en": "PHLX Semiconductor", "vol_1y": 0.4892, "vol_3y": 0.4156, "last": "2026-11-16", "n": 1254, "per_year": 250.8}, {"id": "n225", "ticker": "^N225", "group": "equity", "ko": "닛케이 225", "en": "Nikkei 225", "vol_1y": 0.2931, "vol_3y": 0.2606, "last": "2026-11-17", "n": 1220, "per_year": 243.8}, {"id": "sx5e", "ticker": "^STOXX50E", "group": "equity", "ko": "유로스톡스 50", "en": "Euro Stoxx 50", "vol_1y": 0.1568, "vol_3y": 0.1526, "last": "2026-11-13", "n": 1256, "per_year": 251.4}, {"id": "ssec", "ticker": "000001.SS", "group": "equity", "ko": "상하이종합", "en": "Shanghai Composite", "vol_1y": 0.143, "vol_3y": 0.1583, "last": "2026-11-13", "n": 1211, "per_year": 242.4}, {"id": "eem", "ticker": "EEM", "group": "equity", "ko": "신흥국 주식(EEM)", "en": "Emerging equities (EEM)", "vol_1y": 0.267, "vol_3y": 0.2056, "last": "2026-11-16", "n": 1254, "per_year": 250.8}, {"id": "tlt", "ticker": "TLT", "group": "bond", "ko": "미국 장기국채(TLT)", "en": "US long Treasuries (TLT)", "vol_1y": 0.0966, "vol_3y": 0.1256, "last": "2026-11-16", "n": 1254, "per_year": 250.8}, {"id": "agg", "ticker": "AGG", "group": "bond", "ko": "미국 종합채권(AGG)", "en": "US aggregate bonds (AGG)", "vol_1y": 0.0415, "vol_3y": 0.0498, "last": "2026-11-16", "n": 1254, "per_year": 250.8}, {"id": "hyg", "ticker": "HYG", "group": "bond", "ko": "미국 하이일드(HYG)", "en": "US high yield (HYG)", "vol_1y": 0.0394, "vol_3y": 0.0482, "last": "2026-11-16", "n": 1254, "per_year": 250.8}, {"id": "gold", "ticker": "GC=F", "group": "commodity", "ko": "금", "en": "Gold", "vol_1y": 0.2828, "vol_3y": 0.22, "last": "2026-11-16", "n": 1258, "per_year": 251.4}, {"id": "wti", "ticker": "CL=F", "group": "commodity", "ko": "원유(WTI)", "en": "Crude oil (WTI)", "vol_1y": 0.5741, "vol_3y": 0.4165, "last": "2026-11-16", "n": 1257, "per_year": 251.2}, {"id": "copper", "ticker": "HG=F", "group": "commodity", "ko": "구리", "en": "Copper", "vol_1y": 0.2736, "vol_3y": 0.3012, "last": "2026-11-16", "n": 1258, "per_year": 251.4}, {"id": "usdkrw", "ticker": "KRW=X", "group": "fx", "ko": "달러/원", "en": "USD/KRW", "vol_1y": 0.1069, "vol_3y": 0.0996, "last": "2026-11-17", "n": 1300, "per_year": 259.8}, {"id": "btc", "ticker": "BTC-USD", "group": "crypto", "ko": "비트코인", "en": "Bitcoin", "vol_1y": 0.3858, "vol_3y": 0.4451, "last": "2026-11-17", "n": 1826, "per_year": 365.0}]}</script>
+<script src="../../assets/stoploss.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>언제 팔아야 할까 · 손절선 계산기</title>
+<meta name="description" content="시나리오 표와 변동성을 넣으면 장기 성장률이 가장 높아지는 손절선을 계산합니다.">
+<link rel="canonical" href="https://snowkonn.github.io/stoploss/">
+<link rel="alternate" hreflang="ko" href="https://snowkonn.github.io/stoploss/">
+<link rel="alternate" hreflang="en" href="https://snowkonn.github.io/en/stoploss/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="언제 팔아야 할까 · 손절선 계산기">
+<meta property="og:description" content="시나리오 표와 변동성을 넣으면 장기 성장률이 가장 높아지는 손절선을 계산합니다.">
+<meta property="og:url" content="https://snowkonn.github.io/stoploss/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@300;400;600&amp;display=swap&amp;text=%20%21%22%23%24%25%26%27%28%29%2A%2B%2C-./0123456789%3A%3B%3C%3D%3E%3F%40ABCDEFGHIJKLMNOPQRSTUVWXYZ%5B%5C%5D%5E_%60abcdefghijklmnopqrstuvwxyz%7B%7C%7D~%EA%B0%80%EA%B2%B0%EA%B3%84%EA%B3%BC%EA%B8%88%EA%B8%B0%EA%B9%8C%EB%82%98%EB%84%A3%EB%86%92%EB%8A%94%EB%8B%88%EB%8B%A4%EB%8B%AC%EB%8F%99%EB%9D%BC%EB%A0%A5%EB%A5%A0%EB%A6%AC%EB%A9%B4%EB%B3%80%EC%82%B0%EC%84%A0%EC%84%B1%EC%86%90%EC%8B%9C%EC%95%84%EC%95%BC%EC%96%B8%EC%98%A4%EC%99%80%EC%9C%84%EC%9C%BC%EC%9D%84%EC%9D%B4%EC%9E%85%EC%9E%A5%EC%A0%88%EC%A0%95%EC%A0%9C%EC%A7%80%EC%B9%98%ED%8C%94%ED%95%A0%ED%95%A9">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500&amp;display=swap&amp;text=%20%21%22%23%24%25%26%27%28%29%2A%2B%2C-./0123456789%3A%3B%3C%3D%3E%3F%40ABCDEFGHIJKLMNOPQRSTUVWXYZ%5B%5C%5D%5E_%60abcdefghijklmnopqrstuvwxyz%7B%7C%7D~%C2%B7%E2%86%90%E2%88%92%EA%B0%80%EA%B0%84%EA%B0%88%EA%B0%92%EA%B0%9C%EA%B0%B1%EA%B1%B0%EA%B1%B8%EA%B2%83%EA%B2%8C%EA%B2%A9%EA%B2%AC%EA%B2%B0%EA%B2%BC%EA%B2%BD%EA%B3%84%EA%B3%A0%EA%B3%B1%EA%B3%B3%EA%B3%B5%EA%B3%BC%EA%B4%80%EA%B5%AC%EA%B5%AD%EA%B5%B0%EA%B6%8C%EA%B7%9C%EA%B7%A0%EA%B7%B8%EA%B7%BC%EA%B8%88%EA%B8%B0%EA%B9%8C%EA%B9%9D%EA%BE%BC%EB%80%8C%EB%81%9D%EB%82%98%EB%82%A0%EB%82%A8%EB%82%AB%EB%82%B4%EB%84%98%EB%84%A3%EB%85%84%EB%85%B8%EB%86%92%EB%8A%90%EB%8A%94%EB%8B%88%EB%8B%99%EB%8B%9B%EB%8B%A4%EB%8B%A5%EB%8B%AC%EB%8B%BF%EB%8C%80%EB%8D%94%EB%8D%B8%EB%8F%84%EB%8F%88%EB%8F%8C%EB%8F%99%EB%90%98%EB%91%90%EB%91%98%EB%91%A1%EB%92%A4%EB%93%9C%EB%93%A4%EB%94%B0%EB%95%8C%EB%96%BB%EB%9D%BC%EB%9D%BD%EB%9E%90%EB%9E%98%EB%9F%AC%EB%A0%A5%EB%A1%9C%EB%A1%9D%EB%A3%8C%EB%A5%A0%EB%A5%B4%EB%A5%B8%EB%A5%BC%EB%A6%AC%EB%A6%B4%EB%A6%BD%EB%A7%88%EB%A7%89%EB%A7%8C%EB%A7%9E%EB%A9%B4%EB%AA%BB%EB%AF%B8%EB%B0%94%EB%B0%98%EB%B0%9C%EB%B2%88%EB%B3%80%EB%B3%84%EB%B3%B4%EB%B3%B5%EB%B3%BC%EB%B6%80%EB%B6%88%EB%B9%84%EB%BA%80%EC%82%AC%EC%82%AD%EC%82%B0%EC%83%81%EC%83%9D%EC%84%9C%EC%84%A0%EC%84%AD%EC%84%B1%EC%84%B8%EC%85%80%EC%85%98%EC%86%8C%EC%86%8D%EC%86%90%EC%88%98%EC%88%AB%EC%8A%A4%EC%8A%B5%EC%8A%B9%EC%8B%9C%EC%8B%9D%EC%8B%A0%EC%8C%93%EC%95%84%EC%95%8A%EC%95%8C%EC%95%98%EC%95%BC%EC%96%91%EC%96%B4%EC%96%B8%EC%96%B9%EC%97%86%EC%97%88%EC%97%90%EC%97%AC%EC%97%B0%EC%98%A4%EC%98%AC%EC%99%80%EC%9A%94%EC%9A%B0%EC%9B%80%EC%9B%90%EC%9B%94%EC%9C%84%EC%9C%A0%EC%9C%A8%EC%9C%BC%EC%9D%80%EC%9D%84%EC%9D%8C%EC%9D%98%EC%9D%B4%EC%9D%B5%EC%9D%B8%EC%9D%BC%EC%9E%85%EC%9E%88%EC%9E%90%EC%9E%91%EC%9E%A5%EC%9E%AC%EC%9E%B0%EC%A0%80%EC%A0%81%EC%A0%84%EC%A0%88%EC%A0%90%EC%A0%91%EC%A0%95%EC%A0%9C%EC%A0%B8%EC%A1%8C%EC%A2%85%EC%A2%8C%EC%A3%BC%EC%A4%80%EC%A4%91%EC%A6%9D%EC%A7%80%EC%A7%81%EC%A7%84%EC%A7%9C%EC%B1%84%EC%B2%98%EC%B2%B4%EC%B5%9C%EC%B6%94%EC%B6%A5%EC%B8%A1%EC%B9%98%EC%B9%99%EC%BB%A4%EC%BC%80%EC%BD%94%ED%81%AC%ED%81%BC%ED%86%A1%ED%88%AC%ED%8A%B8%ED%8C%90%ED%8C%94%ED%8E%98%ED%8E%B8%ED%8F%89%ED%8F%AC%ED%91%9C%ED%94%BC%ED%95%84%ED%95%98%ED%95%99%ED%95%9C%ED%95%A0%ED%95%A9%ED%95%B4%ED%98%84%ED%99%95%ED%99%98%ED%9A%8C%ED%9B%84%ED%9D%A5%ED%9E%99">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/tool.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap">
+    <p class="series">Quant, Soon to Know</p>
+    <nav class="lang" aria-label="Language"><span aria-current="page">한국어</span><a href="/en/stoploss/" lang="en" hreflang="en">English</a></nav>
+  </div>
+</header>
+
+<div class="tool-head">
+  <div class="wrap">
+    <a class="back" href="/">← 소개 페이지</a>
+    <h1>언제 팔아야 할까</h1>
+    <p class="lede">시나리오와 변동성을 넣으면 장기 성장률이 가장 높아지는 손절선을 계산합니다.</p>
+  </div>
+</div>
+
+<main class="wrap tool">
+  <section id="inputs">
+    <h2>입력</h2>
+    <div>
+      <p>시나리오는 투자자가 정합니다. 변동성은 자료에서 잰 값을 불러오거나 직접 넣습니다.</p>
+      <form>
+        <div class="fields">
+          <div><label for="asset">자산군</label><select id="asset"></select></div>
+          <fieldset><legend>측정 기간</legend><div class="radios">
+            <label><input type="radio" name="win" value="1y" checked> 최근 1년</label>
+            <label><input type="radio" name="win" value="3y"> 최근 3년</label></div></fieldset>
+          <div><label for="sigma">변동성 (연 %)</label><input id="sigma" type="number" value="30" min="1" max="300" step="0.1" inputmode="decimal"></div>
+        </div>
+        <p class="hint" id="vol-note" aria-live="polite"></p>
+        <div class="scroll"><table class="in" id="sc">
+          <caption>시나리오 표</caption>
+          <thead><tr><th>시나리오</th><th>확률 (%)</th><th>기대수익률 (%)</th><th></th></tr></thead>
+          <tbody></tbody>
+        </table></div>
+        <p class="actions"><button type="button" id="add">시나리오 추가</button></p>
+        <p class="hint" id="psum" aria-live="polite"></p>
+        <div class="fields">
+          <div><label for="horizon">시나리오 기간 (년)</label><input id="horizon" type="number" value="1" min="0.1" max="30" step="0.25" inputmode="decimal"></div>
+          <div><label for="entry">진입가</label><input id="entry" type="number" min="0" step="any" inputmode="decimal" placeholder="선택"></div>
+        </div>
+        <p>진입가를 넣었다면, 현재가와 경과 기간으로 시나리오 확률이 어떻게 바뀌었는지 볼 수 있습니다.</p>
+        <div class="fields">
+          <div><label for="cur">현재가</label><input id="cur" type="number" min="0" step="any" inputmode="decimal" placeholder="선택"></div>
+          <div><label for="months">진입 후 경과 (개월)</label><input id="months" type="number" min="0" step="1" inputmode="decimal" placeholder="선택"></div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section id="output">
+    <h2>결과</h2>
+    <div id="result" aria-live="polite"></div>
+  </section>
+
+  <section id="now">
+    <h2>지금 위치</h2>
+    <div id="now-out" aria-live="polite"></div>
+  </section>
+
+  <section id="assumptions">
+    <h2>가정</h2>
+    <div>
+      <ul class="plain"><li>수익은 속도로 쌓입니다. 시나리오마다 가격이 일정한 속도로 오르거나 내리고, 그 위에 변동성이 얹힙니다.</li><li>시나리오는 평균적으로 표의 기간만큼 이어지고, 언제 끝날지는 미리 알 수 없습니다.</li><li>한 번 팔면 다시 사지 않고, 판 돈은 현금으로 둡니다.</li><li>계좌 전부를 이 포지션에 넣은 경우입니다.</li></ul>
+      <h3>가정이 달라지면</h3>
+      <ul class="plain"><li>끝나는 날짜가 정해져 있으면 손절선은 더 가깝고, 시간이 갈수록 움직입니다.</li><li>이 가정에서는 가격이 올랐다는 이유로 팔 근거가 없습니다. 더 나은 투자처가 생겼거나 남은 기대수익이 달라졌다면 따로 따져야 합니다.</li><li>변동성은 과거 자료에서 잰 값입니다. 손절선은 입력한 시나리오가 맞다는 가정 아래에서 계산한 값입니다.</li></ul>
+      <p>식의 유도는 학습 노트 Part I에 있습니다. <a href="/study/stoploss-part1-rate.pdf">Part I (PDF)</a></p>
+      <p class="note">변동성 자료: Yahoo Finance 일별 종가, 2026-11-17 기준.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>개인 페이지입니다. 회사의 공식 견해가 아니고 투자 권유도 아닙니다. 리포트 저작권은 발간 증권사에 있습니다.</p>
+    <p>갱신 2026.11.17</p>
+  </div>
+</footer>
+<div hidden>상승 중립 하락 시나리오 확률 (%) 기대수익률 (%) 기대수익률 복리 성장률 (연) 손절에 걸릴 확률 삭제 직접 입력 주식 채권 원자재 환율 가상자산 확률 합계 {n}%. 합이 100이 아니면 비율대로 맞춥니다. 최근 1년 {y1}%, 최근 3년 {y3}%. 마지막 관측일 {d}. 변동성을 직접 넣었습니다. 시나리오는 둘 이상이어야 합니다. 확률과 기대수익률을 숫자로 넣어 주세요. 확률의 합이 0보다 커야 합니다. 기대수익률은 −100%보다 커야 합니다. 변동성은 0보다 크고 300% 이하여야 합니다. 시나리오 기간은 0보다 크고 30년 이하여야 합니다. 손절선은 진입가 대비 가격으로는 {p} 손절선을 두지 않는 편이 낫습니다. 어느 손절선도 손절 없이 들고 가는 것보다 성장률을 높이지 못합니다. 이 입력에서는 보유하지 않는 편이 낫습니다. 어느 손절선에서도 기대 성장률이 양이 되지 않습니다. 변동성이 기대수익을 넘어섭니다. 손절 없을 때 성장률 (연) 손절선을 둘 때 성장률 (연) 손절에 걸릴 확률 손절선 위치에 따른 기대 성장률 손절선 (진입가 대비) 손절 없음 손절선 위치에 따른 기대 성장률(연). 점이 가장 높은 곳입니다. 복리 성장률은 기대수익률을 연 로그 수익률로 바꾼 뒤 변동성의 제곱의 절반을 뺀 값입니다. 진입가, 현재가, 경과 기간을 넣으면 계산합니다. 진입 후 수익률 남은 기대 성장률 (연) 처음 확률 지금 확률 현재가가 손절선 아래입니다. 손절선까지 {d}% 남았습니다. 남은 기대 성장률이 양이면 팔 이유가 없습니다. 음으로 돌아서도 손절선에 닿을 때까지는 기다리는 것이 이 계산의 규칙입니다. 확률 코스피 코스닥 S&amp;P 500 나스닥 100 러셀 2000 필라델피아 반도체 닛케이 225 유로스톡스 50 상하이종합 신흥국 주식(EEM) 미국 장기국채(TLT) 미국 종합채권(AGG) 미국 하이일드(HYG) 금 원유(WTI) 구리 달러/원 비트코인</div>
+<script type="application/json" id="i18n">{"up": "상승", "mid": "중립", "down": "하락", "col_name": "시나리오", "col_p": "확률 (%)", "col_r": "기대수익률 (%)", "col_r_out": "기대수익률", "col_mu": "복리 성장률 (연)", "col_hit": "손절에 걸릴 확률", "remove": "삭제", "manual": "직접 입력", "groups": {"equity": "주식", "bond": "채권", "commodity": "원자재", "fx": "환율", "crypto": "가상자산"}, "psum": "확률 합계 {n}%. 합이 100이 아니면 비율대로 맞춥니다.", "vol_note": "최근 1년 {y1}%, 최근 3년 {y3}%. 마지막 관측일 {d}.", "vol_manual": "변동성을 직접 넣었습니다.", "err_rows": "시나리오는 둘 이상이어야 합니다.", "err_number": "확률과 기대수익률을 숫자로 넣어 주세요.", "err_prob": "확률의 합이 0보다 커야 합니다.", "err_return": "기대수익률은 −100%보다 커야 합니다.", "err_sigma": "변동성은 0보다 크고 300% 이하여야 합니다.", "err_horizon": "시나리오 기간은 0보다 크고 30년 이하여야 합니다.", "stop_label": "손절선은 진입가 대비", "stop_price": "가격으로는 {p}", "no_stop": "손절선을 두지 않는 편이 낫습니다.", "no_stop_why": "어느 손절선도 손절 없이 들고 가는 것보다 성장률을 높이지 못합니다.", "avoid": "이 입력에서는 보유하지 않는 편이 낫습니다.", "avoid_why": "어느 손절선에서도 기대 성장률이 양이 되지 않습니다. 변동성이 기대수익을 넘어섭니다.", "g_none": "손절 없을 때 성장률 (연)", "g_stop": "손절선을 둘 때 성장률 (연)", "p_stop": "손절에 걸릴 확률", "chart_alt": "손절선 위치에 따른 기대 성장률", "chart_x": "손절선 (진입가 대비)", "chart_none": "손절 없음", "chart_cap": "손절선 위치에 따른 기대 성장률(연). 점이 가장 높은 곳입니다.", "mu_note": "복리 성장률은 기대수익률을 연 로그 수익률로 바꾼 뒤 변동성의 제곱의 절반을 뺀 값입니다.", "now_hint": "진입가, 현재가, 경과 기간을 넣으면 계산합니다.", "now_ret": "진입 후 수익률", "now_D": "남은 기대 성장률 (연)", "now_prior": "처음 확률", "now_post": "지금 확률", "now_below": "현재가가 손절선 아래입니다.", "now_above": "손절선까지 {d}% 남았습니다.", "now_note": "남은 기대 성장률이 양이면 팔 이유가 없습니다. 음으로 돌아서도 손절선에 닿을 때까지는 기다리는 것이 이 계산의 규칙입니다.", "col_p_out": "확률"}</script>
+<script type="application/json" id="vol-data">{"generated": "2026-11-17", "source": "Yahoo Finance via yfinance", "method": "sample standard deviation of daily log returns over the last 252 and 756 observations, annualized with the observations per year measured from the dates", "assets": [{"id": "kospi", "ticker": "^KS11", "group": "equity", "ko": "코스피", "en": "KOSPI", "vol_1y": 0.5567, "vol_3y": 0.3593, "last": "2026-11-17", "n": 1220, "per_year": 243.8}, {"id": "kosdaq", "ticker": "^KQ11", "group": "equity", "ko": "코스닥", "en": "KOSDAQ", "vol_1y": 0.5025, "vol_3y": 0.3477, "last": "2026-11-17", "n": 1220, "per_year": 243.8}, {"id": "spx", "ticker": "^GSPC", "group": "equity", "ko": "S&P 500", "en": "S&P 500", "vol_1y": 0.1373, "vol_3y": 0.1515, "last": "2026-11-16", "n": 1254, "per_year": 250.8}, {"id": "ndx", "ticker": "^NDX", "group": "equity", "ko": "나스닥 100", "en": "Nasdaq 100", "vol_1y": 0.2149, "vol_3y": 0.2101, "last": "2026-11-16", "n": 1254, "per_year": 250.8}, {"id": "rut", "ticker": "^RUT", "group": "equity", "ko": "러셀 2000", "en": "Russell 2000", "vol_1y": 0.1871, "vol_3y": 0.2112, "last": "2026-11-16", "n": 1254, "per_year": 250.8}, {"id": "sox", "ticker": "^SOX", "group": "equity", "ko": "필라델피아 반도체", "en": "PHLX Semiconductor", "vol_1y": 0.4892, "vol_3y": 0.4156, "last": "2026-11-16", "n": 1254, "per_year": 250.8}, {"id": "n225", "ticker": "^N225", "group": "equity", "ko": "닛케이 225", "en": "Nikkei 225", "vol_1y": 0.2931, "vol_3y": 0.2606, "last": "2026-11-17", "n": 1220, "per_year": 243.8}, {"id": "sx5e", "ticker": "^STOXX50E", "group": "equity", "ko": "유로스톡스 50", "en": "Euro Stoxx 50", "vol_1y": 0.1568, "vol_3y": 0.1526, "last": "2026-11-13", "n": 1256, "per_year": 251.4}, {"id": "ssec", "ticker": "000001.SS", "group": "equity", "ko": "상하이종합", "en": "Shanghai Composite", "vol_1y": 0.143, "vol_3y": 0.1583, "last": "2026-11-13", "n": 1211, "per_year": 242.4}, {"id": "eem", "ticker": "EEM", "group": "equity", "ko": "신흥국 주식(EEM)", "en": "Emerging equities (EEM)", "vol_1y": 0.267, "vol_3y": 0.2056, "last": "2026-11-16", "n": 1254, "per_year": 250.8}, {"id": "tlt", "ticker": "TLT", "group": "bond", "ko": "미국 장기국채(TLT)", "en": "US long Treasuries (TLT)", "vol_1y": 0.0966, "vol_3y": 0.1256, "last": "2026-11-16", "n": 1254, "per_year": 250.8}, {"id": "agg", "ticker": "AGG", "group": "bond", "ko": "미국 종합채권(AGG)", "en": "US aggregate bonds (AGG)", "vol_1y": 0.0415, "vol_3y": 0.0498, "last": "2026-11-16", "n": 1254, "per_year": 250.8}, {"id": "hyg", "ticker": "HYG", "group": "bond", "ko": "미국 하이일드(HYG)", "en": "US high yield (HYG)", "vol_1y": 0.0394, "vol_3y": 0.0482, "last": "2026-11-16", "n": 1254, "per_year": 250.8}, {"id": "gold", "ticker": "GC=F", "group": "commodity", "ko": "금", "en": "Gold", "vol_1y": 0.2828, "vol_3y": 0.22, "last": "2026-11-16", "n": 1258, "per_year": 251.4}, {"id": "wti", "ticker": "CL=F", "group": "commodity", "ko": "원유(WTI)", "en": "Crude oil (WTI)", "vol_1y": 0.5741, "vol_3y": 0.4165, "last": "2026-11-16", "n": 1257, "per_year": 251.2}, {"id": "copper", "ticker": "HG=F", "group": "commodity", "ko": "구리", "en": "Copper", "vol_1y": 0.2736, "vol_3y": 0.3012, "last": "2026-11-16", "n": 1258, "per_year": 251.4}, {"id": "usdkrw", "ticker": "KRW=X", "group": "fx", "ko": "달러/원", "en": "USD/KRW", "vol_1y": 0.1069, "vol_3y": 0.0996, "last": "2026-11-17", "n": 1300, "per_year": 259.8}, {"id": "btc", "ticker": "BTC-USD", "group": "crypto", "ko": "비트코인", "en": "Bitcoin", "vol_1y": 0.3858, "vol_3y": 0.4451, "last": "2026-11-17", "n": 1826, "per_year": 365.0}]}</script>
+<script src="../assets/stoploss.js" defer></script>
+</body>
+</html>

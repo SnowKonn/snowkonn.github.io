@@ -1,7 +1,7 @@
 """Build the static site (Korean at /, English at /en/) plus the agent index files.
 
-Inputs : data/profile.json, data/publications.json, data/study.json, src/style.css, src/site.js
-Outputs: docs/  (index.html, en/index.html, publications.json, llms.txt,
+Inputs : data/profile.json, data/publications.json, data/study.json, data/stoploss.json, data/vol.json, src/
+Outputs: docs/  (index.html, en/index.html, stoploss/, en/stoploss/, publications.json, llms.txt,
                  llms-full.txt, robots.txt, sitemap.xml, assets/)
 No third-party packages.
 """
@@ -23,6 +23,8 @@ P = json.loads((ROOT / "data" / "profile.json").read_text())
 PUBS = json.loads((ROOT / "data" / "publications.json").read_text())
 PUBS.sort(key=lambda r: (r["date"], r["id"]), reverse=True)
 STUDY = json.loads((ROOT / "data" / "study.json").read_text())   # notes kept as PDFs in docs/study
+TOOL = json.loads((ROOT / "data" / "stoploss.json").read_text())  # copy of the stop-loss calculator
+VOL = json.loads((ROOT / "data" / "vol.json").read_text())        # written by tools/update_vol.py
 BASE = P["base_url"].rstrip("/")
 TODAY = dt.date.today()
 FONT_API = "https://fonts.googleapis.com/css2?family={family}&display=swap&text={text}"
@@ -318,6 +320,138 @@ def page(lang: str) -> str:
     return doc.replace("@@FONTS@@", font_links(doc.replace("@@FONTS@@", "")), 1)
 
 
+def _strings(node) -> list[str]:
+    if isinstance(node, str):
+        return [node]
+    return [x for v in (node.values() if isinstance(node, dict) else node) for x in _strings(v)]
+
+
+def _tool_page(lang: str) -> str:
+    """The stop-loss calculator: /stoploss/ (Korean) and /en/stoploss/ (English)."""
+    t, ui = TOOL[lang], P[lang]["ui"]
+    other = "en" if lang == "ko" else "ko"
+    home, here, there = (("/", "/stoploss/", "/en/stoploss/") if lang == "ko" else ("/en/", "/en/stoploss/", "/stoploss/"))
+    prefix = "../" if lang == "ko" else "../../"
+    lang_switch = (f'<span aria-current="page">한국어</span><a href="{there}" lang="en" hreflang="en">English</a>'
+                   if lang == "ko" else
+                   f'<a href="{there}" lang="ko" hreflang="ko">한국어</a><span aria-current="page">English</span>')
+    updated = f"{TODAY:%Y.%m.%d}" if lang == "ko" else f"{TODAY:%-d %B %Y}"
+    items = lambda key: "".join(f"<li>{e(x)}</li>" for x in t[key])
+    # text that the script writes later; listed here so that the font subset covers it
+    glyphs = e(" ".join(_strings(t["js"]) + [a[lang] for a in VOL["assets"]]))
+    as_json = lambda obj: json.dumps(obj, ensure_ascii=False).replace("</", "<\\/")
+    return f"""<!doctype html>
+<html lang="{lang}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{e(t['title'])}</title>
+<meta name="description" content="{e(t['description'])}">
+<link rel="canonical" href="{BASE}{here}">
+<link rel="alternate" hreflang="ko" href="{BASE}/stoploss/">
+<link rel="alternate" hreflang="en" href="{BASE}/en/stoploss/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{e(t['title'])}">
+<meta property="og:description" content="{e(t['description'])}">
+<meta property="og:url" content="{BASE}{here}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+@@FONTS@@
+<link rel="stylesheet" href="{prefix}assets/style.css">
+<link rel="stylesheet" href="{prefix}assets/tool.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap">
+    <p class="series">{e(P['series'])}</p>
+    <nav class="lang" aria-label="Language">{lang_switch}</nav>
+  </div>
+</header>
+
+<div class="tool-head">
+  <div class="wrap">
+    <a class="back" href="{home}">← {e(t['back'])}</a>
+    <h1>{e(t['h1'])}</h1>
+    <p class="lede">{e(t['lede'])}</p>
+  </div>
+</div>
+
+<main class="wrap tool">
+  <section id="inputs">
+    <h2>{e(t['h_in'])}</h2>
+    <div>
+      <p>{e(t['in_note'])}</p>
+      <form>
+        <div class="fields">
+          <div><label for="asset">{e(t['f_asset'])}</label><select id="asset"></select></div>
+          <fieldset><legend>{e(t['f_window'])}</legend><div class="radios">
+            <label><input type="radio" name="win" value="1y" checked> {e(t['w1'])}</label>
+            <label><input type="radio" name="win" value="3y"> {e(t['w3'])}</label></div></fieldset>
+          <div><label for="sigma">{e(t['f_sigma'])}</label><input id="sigma" type="number" value="30" min="1" max="300" step="0.1" inputmode="decimal"></div>
+        </div>
+        <p class="hint" id="vol-note" aria-live="polite"></p>
+        <div class="scroll"><table class="in" id="sc">
+          <caption>{e(t['sc_caption'])}</caption>
+          <thead><tr><th>{e(t['js']['col_name'])}</th><th>{e(t['js']['col_p'])}</th><th>{e(t['js']['col_r'])}</th><th></th></tr></thead>
+          <tbody></tbody>
+        </table></div>
+        <p class="actions"><button type="button" id="add">{e(t['add'])}</button></p>
+        <p class="hint" id="psum" aria-live="polite"></p>
+        <div class="fields">
+          <div><label for="horizon">{e(t['f_horizon'])}</label><input id="horizon" type="number" value="1" min="0.1" max="30" step="0.25" inputmode="decimal"></div>
+          <div><label for="entry">{e(t['f_entry'])}</label><input id="entry" type="number" min="0" step="any" inputmode="decimal" placeholder="{e(t['f_entry_ph'])}"></div>
+        </div>
+        <p>{e(t['now_in_note'])}</p>
+        <div class="fields">
+          <div><label for="cur">{e(t['f_cur'])}</label><input id="cur" type="number" min="0" step="any" inputmode="decimal" placeholder="{e(t['f_entry_ph'])}"></div>
+          <div><label for="months">{e(t['f_months'])}</label><input id="months" type="number" min="0" step="1" inputmode="decimal" placeholder="{e(t['f_entry_ph'])}"></div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section id="output">
+    <h2>{e(t['h_out'])}</h2>
+    <div id="result" aria-live="polite"></div>
+  </section>
+
+  <section id="now">
+    <h2>{e(t['h_now'])}</h2>
+    <div id="now-out" aria-live="polite"></div>
+  </section>
+
+  <section id="assumptions">
+    <h2>{e(t['h_assume'])}</h2>
+    <div>
+      <ul class="plain">{items('assume')}</ul>
+      <h3>{e(t['limits_h'])}</h3>
+      <ul class="plain">{items('limits')}</ul>
+      <p>{e(t['source'])} <a href="/{e(TOOL['note_pdf'])}">{e(t['source_link'])}</a></p>
+      <p class="note">{e(t['vol_source'].replace('{d}', VOL['generated']))}</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>{e(P[lang]['disclaimer'])}</p>
+    <p>{e(ui['updated'])} {updated}</p>
+  </div>
+</footer>
+<div hidden>{glyphs}</div>
+<script type="application/json" id="i18n">{as_json(t['js'])}</script>
+<script type="application/json" id="vol-data">{as_json(VOL)}</script>
+<script src="{prefix}assets/stoploss.js" defer></script>
+</body>
+</html>
+"""
+
+
+def tool_page(lang: str) -> str:
+    doc = _tool_page(lang)
+    return doc.replace("@@FONTS@@", font_links(doc.replace("@@FONTS@@", "")), 1)
+
+
 def publications_json() -> str:
     return json.dumps({
         "schema": {
@@ -387,8 +521,11 @@ def main() -> None:
     for sub in ("assets", "en"):                     # docs/reports (curate.py) and docs/study are kept
         shutil.rmtree(SITE / sub, ignore_errors=True)
         (SITE / sub).mkdir(parents=True)
-    for name in ("style.css", "site.js"):
+    for name in ("style.css", "site.js", "tool.css", "stoploss.js"):
         shutil.copy(ROOT / "src" / name, SITE / "assets" / name)
+    for folder, lang in ((SITE / "stoploss", "ko"), (SITE / "en" / "stoploss", "en")):
+        folder.mkdir(parents=True, exist_ok=True)
+        (folder / "index.html").write_text(tool_page(lang))
     (SITE / "index.html").write_text(page("ko"))
     (SITE / "en" / "index.html").write_text(page("en"))
     (SITE / "publications.json").write_text(publications_json())
@@ -397,7 +534,7 @@ def main() -> None:
     (SITE / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {BASE}/sitemap.xml\n")
     (SITE / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-        + "".join(f"  <url><loc>{BASE}{p}</loc><lastmod>{TODAY}</lastmod></url>\n" for p in ("/", "/en/"))
+        + "".join(f"  <url><loc>{BASE}{p}</loc><lastmod>{TODAY}</lastmod></url>\n" for p in ("/", "/en/", "/stoploss/", "/en/stoploss/"))
         + "</urlset>\n")
     (SITE / ".nojekyll").write_text("")
     print(f"built {SITE}: {len(PUBS)} publications")

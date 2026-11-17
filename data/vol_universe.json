@@ -1,0 +1,20 @@
+[
+ {"id": "kospi", "ticker": "^KS11", "group": "equity", "ko": "코스피", "en": "KOSPI"},
+ {"id": "kosdaq", "ticker": "^KQ11", "group": "equity", "ko": "코스닥", "en": "KOSDAQ"},
+ {"id": "spx", "ticker": "^GSPC", "group": "equity", "ko": "S&P 500", "en": "S&P 500"},
+ {"id": "ndx", "ticker": "^NDX", "group": "equity", "ko": "나스닥 100", "en": "Nasdaq 100"},
+ {"id": "rut", "ticker": "^RUT", "group": "equity", "ko": "러셀 2000", "en": "Russell 2000"},
+ {"id": "sox", "ticker": "^SOX", "group": "equity", "ko": "필라델피아 반도체", "en": "PHLX Semiconductor"},
+ {"id": "n225", "ticker": "^N225", "group": "equity", "ko": "닛케이 225", "en": "Nikkei 225"},
+ {"id": "sx5e", "ticker": "^STOXX50E", "group": "equity", "ko": "유로스톡스 50", "en": "Euro Stoxx 50"},
+ {"id": "ssec", "ticker": "000001.SS", "group": "equity", "ko": "상하이종합", "en": "Shanghai Composite"},
+ {"id": "eem", "ticker": "EEM", "group": "equity", "ko": "신흥국 주식(EEM)", "en": "Emerging equities (EEM)"},
+ {"id": "tlt", "ticker": "TLT", "group": "bond", "ko": "미국 장기국채(TLT)", "en": "US long Treasuries (TLT)"},
+ {"id": "agg", "ticker": "AGG", "group": "bond", "ko": "미국 종합채권(AGG)", "en": "US aggregate bonds (AGG)"},
+ {"id": "hyg", "ticker": "HYG", "group": "bond", "ko": "미국 하이일드(HYG)", "en": "US high yield (HYG)"},
+ {"id": "gold", "ticker": "GC=F", "group": "commodity", "ko": "금", "en": "Gold"},
+ {"id": "wti", "ticker": "CL=F", "group": "commodity", "ko": "원유(WTI)", "en": "Crude oil (WTI)"},
+ {"id": "copper", "ticker": "HG=F", "group": "commodity", "ko": "구리", "en": "Copper"},
+ {"id": "usdkrw", "ticker": "KRW=X", "group": "fx", "ko": "달러/원", "en": "USD/KRW"},
+ {"id": "btc", "ticker": "BTC-USD", "group": "crypto", "ko": "비트코인", "en": "Bitcoin"}
+]
