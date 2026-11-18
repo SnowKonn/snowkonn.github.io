@@ -14,8 +14,8 @@
  "notes": [
   {
    "file": "study/stoploss-part1-rate.pdf",
-   "date": "2026-11-17",
-   "version": "4.2",
+   "date": "2026-11-18",
+   "version": "5.0",
    "pages": 56,
    "authors": "SoonHo Kwon and Claude Fable 5.2",
    "title": "When Do Stop-Loss and Take-Profit Rules Maximize Long-Run Growth? Part I: the return accrues as a rate",
@@ -28,8 +28,8 @@
   },
   {
    "file": "study/stoploss-part2-level.pdf",
-   "date": "2026-11-17",
-   "version": "1.2",
+   "date": "2026-11-18",
+   "version": "1.3",
    "pages": 20,
    "authors": "SoonHo Kwon and Claude Fable 5.2",
    "title": "When Do Stop-Loss and Take-Profit Rules Maximize Long-Run Growth? Part II: the return is a level to be reached",
@@ -42,8 +42,8 @@
   },
   {
    "file": "study/stoploss-part3-size.pdf",
-   "date": "2026-11-17",
-   "version": "1.2",
+   "date": "2026-11-18",
+   "version": "2.0",
    "pages": 32,
    "authors": "SoonHo Kwon and Claude Fable 5.2",
    "title": "When Do Stop-Loss and Take-Profit Rules Maximize Long-Run Growth? Part III: position size, cash and several positions",
@@ -56,8 +56,8 @@
   },
   {
    "file": "study/stoploss-appendix1-girsanov.pdf",
-   "date": "2026-11-17",
-   "version": "1.2",
+   "date": "2026-11-18",
+   "version": "1.3",
    "pages": 43,
    "authors": "SoonHo Kwon and Claude Fable 5.2",
    "title": "When Do Stop-Loss and Take-Profit Rules Maximize Long-Run Growth? Appendix 1: Girsanov's theorem, step by step",
