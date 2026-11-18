@@ -14,45 +14,57 @@
  "notes": [
   {
    "file": "study/stoploss-part1-rate.pdf",
-   "date": "2026-11-16",
-   "version": "3.0",
-   "pages": 48,
+   "date": "2026-11-18",
+   "version": "6.1",
+   "pages": 60,
    "authors": "SoonHo Kwon and Claude Fable 5.2",
    "title": "When Do Stop-Loss and Take-Profit Rules Maximize Long-Run Growth? Part I: the return accrues as a rate",
-   "label": {"ko": "손절과 익절 Part I", "en": "Stop-loss and take-profit, Part I"},
-   "ko": "시나리오 표에서 손절선을 유도합니다. 기대수익이 속도로 쌓이는 경우입니다.",
-   "en": "A stop-loss derived from a scenario table, when the return accrues as a rate."
+   "label": {
+    "ko": "손절과 익절 Part I",
+    "en": "Stop-loss and take-profit, Part I"
+   },
+   "ko": "시나리오 표에서 손절선을 유도합니다. 기대수익이 속도로 쌓이는 경우이고, 결과가 어떤 가정에 달려 있는지도 따집니다.",
+   "en": "A stop-loss derived from a scenario table, when the return accrues as a rate, and which of the results depend on which assumptions."
   },
   {
    "file": "study/stoploss-part2-level.pdf",
-   "date": "2026-11-16",
-   "version": "1.0",
+   "date": "2026-11-18",
+   "version": "1.4",
    "pages": 20,
    "authors": "SoonHo Kwon and Claude Fable 5.2",
    "title": "When Do Stop-Loss and Take-Profit Rules Maximize Long-Run Growth? Part II: the return is a level to be reached",
-   "label": {"ko": "손절과 익절 Part II", "en": "Stop-loss and take-profit, Part II"},
+   "label": {
+    "ko": "손절과 익절 Part II",
+    "en": "Stop-loss and take-profit, Part II"
+   },
    "ko": "같은 표를 목표가로 읽으면 익절이 나옵니다.",
    "en": "The same table read as a price level, which gives a profit target."
   },
   {
    "file": "study/stoploss-part3-size.pdf",
-   "date": "2026-11-16",
-   "version": "1.0",
+   "date": "2026-11-18",
+   "version": "3.0",
    "pages": 32,
    "authors": "SoonHo Kwon and Claude Fable 5.2",
    "title": "When Do Stop-Loss and Take-Profit Rules Maximize Long-Run Growth? Part III: position size, cash and several positions",
-   "label": {"ko": "손절과 익절 Part III", "en": "Stop-loss and take-profit, Part III"},
+   "label": {
+    "ko": "손절과 익절 Part III",
+    "en": "Stop-loss and take-profit, Part III"
+   },
    "ko": "비중, 현금, 여러 포지션을 다룹니다.",
    "en": "Position size, cash and several positions."
   },
   {
    "file": "study/stoploss-appendix1-girsanov.pdf",
-   "date": "2026-11-16",
-   "version": "1.0",
+   "date": "2026-11-18",
+   "version": "1.4",
    "pages": 43,
    "authors": "SoonHo Kwon and Claude Fable 5.2",
    "title": "When Do Stop-Loss and Take-Profit Rules Maximize Long-Run Growth? Appendix 1: Girsanov's theorem, step by step",
-   "label": {"ko": "부록 1: 걸사노프 정리", "en": "Appendix 1: Girsanov's theorem"},
+   "label": {
+    "ko": "부록 1: 걸사노프 정리",
+    "en": "Appendix 1: Girsanov's theorem"
+   },
    "ko": "걸사노프 정리를 한 단계씩 증명합니다. 참고용입니다.",
    "en": "Girsanov's theorem proved step by step, for reference."
   }
